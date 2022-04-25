@@ -11,10 +11,19 @@ CONFIG += c++17
 SOURCES += \
     main.cpp \
     mainwindow.cpp \
+    modmatrix.cpp \
+    patch.cpp \
+    pseudovoice.cpp \
+    synthesizer.cpp \
     voice.cpp
 
 HEADERS += \
     mainwindow.h \
+    modmatrix.h \
+    patch.h \
+    pseudovoice.h \
+    synth_util.h \
+    synthesizer.h \
     voice.h
 
 FORMS += \
