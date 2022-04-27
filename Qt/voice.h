@@ -4,12 +4,18 @@
 #include <QObject>
 #include <patch.h>
 #include <pseudovoice.h>
+#include <QTime>
 
 class Voice : public QObject
 {
     Q_OBJECT
 public:
     explicit Voice(QObject *parent = nullptr);
+    void update(QTime t);
+    void reset_envelope();
+    void clear_notes();
+    void add_note(int note, int velocity);
+    void release_note(int note);
 
 signals:
 

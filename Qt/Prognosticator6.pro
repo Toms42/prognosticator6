@@ -1,6 +1,7 @@
 QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+include(ext/QMidi/src/QMidi.pri)
 
 CONFIG += c++17
 
@@ -9,6 +10,7 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    envelope.cpp \
     main.cpp \
     mainwindow.cpp \
     modmatrix.cpp \
@@ -18,6 +20,7 @@ SOURCES += \
     voice.cpp
 
 HEADERS += \
+    envelope.h \
     mainwindow.h \
     modmatrix.h \
     patch.h \

@@ -26,9 +26,9 @@ public:
 
     enum VoiceMode {
         VOICE_SINGLE,
-        LFO_MONO,
-        LFO_PARAPHONIC,
-        LFO_DUOPHONIC
+        VOICE_MONO,
+        VOICE_PARAPHONIC,
+        VOICE_DUOPHONIC
     };
 
     enum ChorusMode {
