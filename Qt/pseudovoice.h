@@ -11,11 +11,11 @@ class PseudoVoice : public QObject
     Q_OBJECT
 public:
     explicit PseudoVoice(QObject *parent = nullptr);
-    void update(QTime t);
+    void update(qint64 t_ms);
     double getFreq();
     void setNote();
     void releaseNote();
-    bool isActive();
+    Envelope::GateStatus gateStatus();
 
 public slots:
 //    void updateEnvelope(double amp);
@@ -27,7 +27,6 @@ private:
     double _phase;
     double _freq;
     double _amp;
-    bool _active;
 
 signals:
 };

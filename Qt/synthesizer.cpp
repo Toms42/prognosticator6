@@ -7,7 +7,7 @@ Synthesizer::Synthesizer(QObject *parent)
 }
 
 void Synthesizer::update(void) {
-    auto t = QTime::currentTime();
+    qint64 t = QDateTime::currentMSecsSinceEpoch();
 
     // Update both voices.
     // Envelopes should update, and we can
@@ -15,27 +15,66 @@ void Synthesizer::update(void) {
     _v1.update(t);
 }
 
-void Synthesizer::_addNote(int note, int velocity) {
+
+// Trigger a note. This sends the note to the appropriate voice(s) based on timbre and voicing modes.
+// Note that depending on voice modes the voices might behave differently when a new note is added.
+void Synthesizer::_addNote(int note, int velocity, int channel) {
     switch (_voice_mode) {
-    case Patch::VoiceMode::VOICE_SINGLE:
-        _v0.reset_envelope();
-        _v1.reset_envelope();
-        _v0.clear_notes();
-        _v1.clear_notes();
+
+    // MONO, SINGLE, and PARAPHONIC all use the voices in unison.
+    case Patch::VOICE_MONO:
+    case Patch::VOICE_SINGLE:
+    case Patch::VOICE_PARAPHONIC:
+
+        // DUALMIDI Timbre uses each voice for a separate midi channel, so map accordingly.
+        if (_timbre_mode == Patch::TIMBRE_DUALMIDI) {
+            if (channel == 0)
+                _v0.add_note(note, velocity);
+            if (channel == 1)
+                _v1.add_note(note, velocity);
+        } else {
+            _v0.add_note(note, velocity);
+            _v1.add_note(note, velocity);
+        }
         break;
-    case Patch::VoiceMode::VOICE_MONO:
-        break;
-    case Patch::VoiceMode::VOICE_PARAPHONIC:
-        break;
-    case Patch::VoiceMode::VOICE_DUOPHONIC:
+
+    // Duophonic only allows two notes at a time, one per voice, so pick the voice that isn't being used,
+    // or reuse a voice if both voices are active. Note this mode is NOT compatible with TIMBRE_DUALMIDI.
+    case Patch::VOICE_DUOPHONIC:
+        if (_v0.gate_status() == Envelope::GATE_OFF)
+            _v0.add_note(note, velocity);
+        else if (_v1.gate_status() == Envelope::GATE_OFF)
+            _v1.add_note(note, velocity);
+        else if (_v0.gate_status() == Envelope::GATE_RELEASE && _v1.gate_status() == Envelope::GATE_ON)
+            _v0.add_note(note, velocity);
+        else if (_v1.gate_status() == Envelope::GATE_RELEASE && _v0.gate_status() == Envelope::GATE_ON)
+            _v1.add_note(note, velocity);
+        else {
+            //both notes are in RELEASE or ON. Override the oldest note.
+            if (_v0.age_ms() > _v1.age_ms())
+                _v0.add_note(note, velocity);
+            else
+                _v1.add_note(note, velocity);
+        }
         break;
     }
 }
 
-void Synthesizer::_removeNote(int note) {
-
+void Synthesizer::_releaseNote(int note, int channel) {
+    // DUALMIDI Timbre uses each voice for a separate midi channel, so release accordingly.
+    if (_timbre_mode == Patch::TIMBRE_DUALMIDI) {
+        if (channel == 0)
+            _v0.release_note(note);
+        if (channel == 1)
+            _v1.release_note(note);
+    } else {
+        _v0.release_note(note);
+        _v1.release_note(note);
+    }
 }
 
+// Callback for midi event. Triggers note adds, mod changes, etc.
+// Note this is not synchronized to "update."
 void Synthesizer::midiEvent(quint32 message, quint32 timing) {
     auto event = QMidiEvent();
     event.setMessage(message);
@@ -44,12 +83,15 @@ void Synthesizer::midiEvent(quint32 message, quint32 timing) {
     int note = event.note();
     int velocity = event.velocity();
     int amount = event.amount();
+    int channel = event.voice();
 
     switch (type) {
     case QMidiEvent::EventType::NoteOn:
-        _addNote(note, velocity);
+        _addNote(note, velocity, channel);
+        break;
 
     case QMidiEvent::EventType::NoteOff:
+        _releaseNote(note, channel);
         break;
 
     case QMidiEvent::EventType::PitchWheel:

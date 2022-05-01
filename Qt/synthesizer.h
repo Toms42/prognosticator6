@@ -21,15 +21,14 @@ private slots:
     void midiEvent(quint32 message, quint32 timing);
 
 private:
-    void _addNote(int note, int velocity);
-    void _removeNote(int note);
+    void _addNote(int note, int velocity, int channel);
+    void _releaseNote(int note, int channel);
 
     QTimer _timer;
     Voice _v0;
     Voice _v1;
-    Patch::ChorusMode _chorus_mode;
     Patch::VoiceMode _voice_mode;
-    QVector<uint8_t> _active_notes;
+    Patch::TimbreMode _timbre_mode;
 };
 
 #endif // SYNTHESIZER_H

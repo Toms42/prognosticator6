@@ -14,21 +14,28 @@ public:
         OSC_SQUARE,
         OSC_TRI,
         OSC_SAW,
-        OSC_SIN
+        OSC_SIN,
     };
 
     enum LfoShape {
         LFO_SQUARE,
         LFO_TRI,
         LFO_SAW,
-        LFO_SIN
+        LFO_SIN,
+    };
+
+    enum TimbreMode {
+        TIMBRE_SINGLE_MONO,     // Single timbre, only one voice is used.
+        TIMBRE_SINGLE_STEREO,   // Single timbre, but both voices are used. (One for left, one for right). Panpot, phase offset are allowed in this mode.
+        TIMBRE_DUAL,            // Dual timbre. Each voice is used for a different timbre. mono.
+        TIMBRE_DUALMIDI,        // Dual timbre, but each timbre is on a different midi channel rather than stacked.
     };
 
     enum VoiceMode {
         VOICE_SINGLE,
         VOICE_MONO,
         VOICE_PARAPHONIC,
-        VOICE_DUOPHONIC
+        VOICE_DUOPHONIC,
     };
 
     enum ChorusMode {
@@ -37,14 +44,14 @@ public:
     };
 
     enum ModSink {
-        MOD_OSC_SHAPE0,
-        MOD_OSC_SHAPE1,
         MOD_OSC_DETUNE,
         MOD_OSC_PITCH,
         MOD_FILTER_CUTOFF,
         MOD_FILTER_RESONANCE,
         MOD_FILTER_AMP,
         MOD_CHORUS_DEPTH,
+        MOD_STEREOPAN,
+        MOD_STEREOPHASE,
 
         NUM_MOD_SINKS
     };
@@ -53,14 +60,13 @@ public:
         MODSR_VEL,
         MOD_LFO0,
         MOD_LFO1,
+        MOD_ENV0,
         MOD_ENV1,
-        MOD_ENV2,
-        MOD_ENV3,
 
         NUM_MOD_SOURCES
     };
 
-    struct PatchData {
+    struct TimbreData {
         // Oscillators:
         OscShape osc_shape0;
         OscShape osc_shape1;
@@ -68,7 +74,6 @@ public:
         int osc_octave;
 
         // Voices
-        VoiceMode voice_mode;
         float voice_glide;
         ChorusMode voice_chorus;
 
@@ -91,6 +96,15 @@ public:
         float env1_decay1;
         float env1_sustain1;
         float env1_release1;
+    };
+
+    struct PatchData {
+        // Timbres
+        TimbreData timbre0;
+        TimbreData timbre1;
+
+        //
+        VoiceMode voice_mode;
 
         // LFO 0
         float lfo0_freq;

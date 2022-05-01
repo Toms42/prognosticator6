@@ -5,3 +5,4 @@ PseudoVoice::PseudoVoice(QObject *parent)
 {
 
 }
+

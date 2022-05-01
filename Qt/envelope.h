@@ -8,6 +8,12 @@ class Envelope : public QObject
 {
     Q_OBJECT
 public:
+    enum GateStatus {
+        GATE_OFF,
+        GATE_RELEASE,
+        GATE_ON,
+    };
+
     explicit Envelope(QObject *parent = nullptr);
     void update(QTime t);
     double getVal();
