@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/fonts">
+        <file>DIN-BlackAlternate.ttf</file>
+        <file>DIN-Bold.ttf</file>
+        <file>DIN-Light.ttf</file>
+        <file>DIN-Medium.ttf</file>
+        <file>DIN-Regular.ttf</file>
+    </qresource>
+    <qresource prefix="/"/>
+</RCC>
