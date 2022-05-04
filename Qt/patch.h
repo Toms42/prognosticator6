@@ -10,18 +10,12 @@ class Patch : public QObject
 public:
     explicit Patch(QDir patch_dir, QObject *parent = nullptr);
 
-    enum OscShape {
-        OSC_SQUARE,
-        OSC_TRI,
-        OSC_SAW,
-        OSC_SIN,
-    };
-
     enum LfoShape {
         LFO_SQUARE,
         LFO_TRI,
         LFO_SAW,
         LFO_SIN,
+        LFO_RAND,
     };
 
     enum TimbreMode {
@@ -68,40 +62,39 @@ public:
 
     struct TimbreData {
         // Oscillators:
-        OscShape osc_shape0;
-        OscShape osc_shape1;
-        float osc_detune;
+        double osc_shape0;
+        double osc_shape1;
+        double osc_detune;
         int osc_octave;
 
         // Voices
-        float voice_glide;
+        double voice_glide;
         ChorusMode voice_chorus;
 
         // Filter:
-        float filter_freq;
-        float filter_resonance;
+        double filter_freq;
+        double filter_resonance;
 
         // Mixer:
-        float mixer_amount0;
-        float mixer_amount1;
+        double mixer_amount0;
+        double mixer_amount1;
 
         // Envelope 0
-        float env0_attack;
-        float env0_decay;
-        float env0_sustain;
-        float env0_release;
+        double env0_attack;
+        double env0_decay;
+        double env0_sustain;
+        double env0_release;
 
         // Envelope 1
-        float env1_attack1;
-        float env1_decay1;
-        float env1_sustain1;
-        float env1_release1;
+        double env1_attack;
+        double env1_decay;
+        double env1_sustain;
+        double env1_release;
     };
 
     struct PatchData {
         // Timbres
-        TimbreData timbre0;
-        TimbreData timbre1;
+        TimbreData timbre[2];
 
         //
         VoiceMode voice_mode;
@@ -118,17 +111,56 @@ public:
         int8_t mod_matrix[ModSource::NUM_MOD_SOURCES][ModSink::NUM_MOD_SINKS];
     };
 
+    int activeTimbre() {return _activeTimbre;};
+
 public slots:
     void save(uint16_t idx);
     void load(uint16_t idx);
 
+    void updateVoiceMode(int m) {_p.voice_mode = VoiceMode(m); _onChange();};
+    void updateLfoFreq0(double f) {_p.lfo0_freq = f; _onChange();};
+    void updateLfoFreq1(double f) {_p.lfo1_freq = f; _onChange();};
+    void updateLfoShape0(int s) {_p.lfo0_shape = LfoShape(s); _onChange();};
+    void updateLfoShape1(int s) {_p.lfo1_shape = LfoShape(s); _onChange();};
+
+    void toggleActiveTimbre() {_activeTimbre = !_activeTimbre; _onChange();};
+
+    void updateOscShape0(double s) {_p.timbre[_activeTimbre].osc_shape0 = s; _onChange();};
+    void updateOscShape1(double s) {_p.timbre[_activeTimbre].osc_shape1 = s; _onChange();};
+    void updateOscDetune(double s) {_p.timbre[_activeTimbre].osc_detune = s; _onChange();};
+    void updateOscOctave(int o) {_p.timbre[_activeTimbre].osc_octave = o; _onChange();};
+
+    void updateVoiceGlide(double g) {_p.timbre[_activeTimbre].voice_glide = g; _onChange();};
+    void updateChorus(int m) {_p.timbre[_activeTimbre].voice_chorus = ChorusMode(m); _onChange();};
+
+    void updateFilterFreq(double f) {_p.timbre[_activeTimbre].filter_freq = f; _onChange();};
+    void updateFilterResonance(double r) {_p.timbre[_activeTimbre].filter_resonance = r; _onChange();};
+
+    void updateMixer0(double a) {_p.timbre[_activeTimbre].mixer_amount0 = a; _onChange();};
+    void updateMixer1(double a) {_p.timbre[_activeTimbre].mixer_amount1 = a; _onChange();};
+
+    void updateEnv0Attack(double s) {_p.timbre[_activeTimbre].env0_attack = s; _onChange();};
+    void updateEnv0Decay(double s) {_p.timbre[_activeTimbre].env0_decay = s; _onChange();};
+    void updateEnv0Sustain(double s) {_p.timbre[_activeTimbre].env0_sustain = s; _onChange();};
+    void updateEnv0Release(double s) {_p.timbre[_activeTimbre].env0_release = s; _onChange();};
+
+    void updateEnv1Attack(double s) {_p.timbre[_activeTimbre].env1_attack = s; _onChange();};
+    void updateEnv1Decay(double s) {_p.timbre[_activeTimbre].env1_decay = s; _onChange();};
+    void updateEnv1Sustain(double s) {_p.timbre[_activeTimbre].env1_sustain = s; _onChange();};
+    void updateEnv1Release(double s) {_p.timbre[_activeTimbre].env1_release = s; _onChange();};
+
 private:
+    void _onChange() {
+        emit updated(_p);
+    };
+
     uint16_t current_idx;
     QDir folder;
-    Patch::PatchData data;
+    Patch::PatchData _p;
+    int _activeTimbre = 0;
 
 signals:
-    void updated(Patch::PatchData data);
+    void updated(const Patch::PatchData &data);
 };
 
 #endif // PATCH_H

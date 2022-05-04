@@ -21,8 +21,8 @@ public:
 signals:
 
 private:
-    Patch::OscShape _shape0;
-    Patch::OscShape _shape1;
+    double _shape0;
+    double _shape1;
     double _detune1;
     uint8_t _octave1;
     PseudoVoice _pvoices[6];

@@ -21,6 +21,7 @@ SOURCES += \
     widgets/envelopewidget.cpp \
     widgets/filterwidget.cpp \
     widgets/knobwidget.cpp \
+    widgets/lfowidget.cpp \
     widgets/oscillatorwidget.cpp
 
 HEADERS += \
@@ -29,12 +30,14 @@ HEADERS += \
     modmatrix.h \
     patch.h \
     pseudovoice.h \
+    simplerandom.h \
     synth_util.h \
     synthesizer.h \
     voice.h \
     widgets/envelopewidget.h \
     widgets/filterwidget.h \
     widgets/knobwidget.h \
+    widgets/lfowidget.h \
     widgets/oscillatorwidget.h
 
 FORMS += \

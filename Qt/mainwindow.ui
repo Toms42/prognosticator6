@@ -248,6 +248,9 @@ QRadioButton::indicator::checked {
               <height>8</height>
              </size>
             </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
            </widget>
           </item>
           <item>
@@ -497,6 +500,9 @@ QRadioButton::indicator::checked {
               <width>8</width>
               <height>8</height>
              </size>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
             </property>
            </widget>
           </item>
@@ -1035,7 +1041,7 @@ QGroupBox::title {
       </property>
       <layout class="QGridLayout" name="gridLayout_6">
        <item row="0" column="0" colspan="2">
-        <widget class="QWidget" name="widget_4" native="true">
+        <widget class="LfoWidget" name="lfoViewer0" native="true">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
            <horstretch>0</horstretch>
@@ -1045,10 +1051,20 @@ QGroupBox::title {
          <property name="styleSheet">
           <string notr="true">background-color: rgb(46, 52, 54);</string>
          </property>
+         <property name="color" stdset="0">
+          <color>
+           <red>255</red>
+           <green>164</green>
+           <blue>94</blue>
+          </color>
+         </property>
+         <property name="linewidth" stdset="0">
+          <double>1.500000000000000</double>
+         </property>
         </widget>
        </item>
        <item row="1" column="0">
-        <widget class="KnobWidget" name="knobResonance_10">
+        <widget class="KnobWidget" name="knobLfoFreq0">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
            <horstretch>0</horstretch>
@@ -1092,7 +1108,7 @@ QGroupBox::title {
         </widget>
        </item>
        <item row="1" column="1">
-        <widget class="KnobWidget" name="knobResonance_11">
+        <widget class="KnobWidget" name="knobLfoShape0">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
            <horstretch>0</horstretch>
@@ -1100,7 +1116,7 @@ QGroupBox::title {
           </sizepolicy>
          </property>
          <property name="minimum">
-          <number>1</number>
+          <number>0</number>
          </property>
          <property name="maximum">
           <number>4</number>
@@ -1134,7 +1150,7 @@ QGroupBox::title {
           <double>1.000000000000000</double>
          </property>
          <property name="valmax" stdset="0">
-          <double>4.000000000000000</double>
+          <double>5.000000000000000</double>
          </property>
         </widget>
        </item>
@@ -1251,6 +1267,9 @@ QRadioButton::indicator::checked {
               <width>8</width>
               <height>8</height>
              </size>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
             </property>
            </widget>
           </item>
@@ -1603,6 +1622,9 @@ QRadioButton::indicator::checked {
               <width>8</width>
               <height>8</height>
              </size>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
             </property>
            </widget>
           </item>
@@ -2216,21 +2238,55 @@ QGroupBox::title {
        <string>lfo.1</string>
       </property>
       <layout class="QGridLayout" name="gridLayout_7">
-       <item row="0" column="0" colspan="2">
-        <widget class="QWidget" name="widget_5" native="true">
+       <item row="1" column="1">
+        <widget class="KnobWidget" name="knobLfoShape1">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
            <horstretch>0</horstretch>
-           <verstretch>15</verstretch>
+           <verstretch>10</verstretch>
           </sizepolicy>
          </property>
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(46, 52, 54);</string>
+         <property name="minimum">
+          <number>0</number>
+         </property>
+         <property name="maximum">
+          <number>4</number>
+         </property>
+         <property name="color" stdset="0">
+          <color>
+           <red>255</red>
+           <green>164</green>
+           <blue>94</blue>
+          </color>
+         </property>
+         <property name="showtext" stdset="0">
+          <bool>true</bool>
+         </property>
+         <property name="unit" stdset="0">
+          <string/>
+         </property>
+         <property name="numdigits" stdset="0">
+          <number>0</number>
+         </property>
+         <property name="label" stdset="0">
+          <string>shape</string>
+         </property>
+         <property name="linewidth" stdset="0">
+          <double>5.000000000000000</double>
+         </property>
+         <property name="logarithmic" stdset="0">
+          <bool>false</bool>
+         </property>
+         <property name="valmin" stdset="0">
+          <double>1.000000000000000</double>
+         </property>
+         <property name="valmax" stdset="0">
+          <double>5.000000000000000</double>
          </property>
         </widget>
        </item>
        <item row="1" column="0">
-        <widget class="KnobWidget" name="knobResonance_12">
+        <widget class="KnobWidget" name="knobLfoFreq1">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
            <horstretch>0</horstretch>
@@ -2273,19 +2329,16 @@ QGroupBox::title {
          </property>
         </widget>
        </item>
-       <item row="1" column="1">
-        <widget class="KnobWidget" name="knobResonance_13">
+       <item row="0" column="0" colspan="2">
+        <widget class="LfoWidget" name="lfoViewer1" native="true">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
            <horstretch>0</horstretch>
-           <verstretch>10</verstretch>
+           <verstretch>15</verstretch>
           </sizepolicy>
          </property>
-         <property name="minimum">
-          <number>1</number>
-         </property>
-         <property name="maximum">
-          <number>4</number>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(46, 52, 54);</string>
          </property>
          <property name="color" stdset="0">
           <color>
@@ -2294,29 +2347,8 @@ QGroupBox::title {
            <blue>94</blue>
           </color>
          </property>
-         <property name="showtext" stdset="0">
-          <bool>true</bool>
-         </property>
-         <property name="unit" stdset="0">
-          <string/>
-         </property>
-         <property name="numdigits" stdset="0">
-          <number>0</number>
-         </property>
-         <property name="label" stdset="0">
-          <string>shape</string>
-         </property>
          <property name="linewidth" stdset="0">
-          <double>5.000000000000000</double>
-         </property>
-         <property name="logarithmic" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="valmin" stdset="0">
-          <double>1.000000000000000</double>
-         </property>
-         <property name="valmax" stdset="0">
-          <double>4.000000000000000</double>
+          <double>1.500000000000000</double>
          </property>
         </widget>
        </item>
@@ -3083,6 +3115,53 @@ QGroupBox::title {
        <string>oscillators</string>
       </property>
       <layout class="QGridLayout" name="gridLayout_5">
+       <item row="2" column="0">
+        <widget class="KnobWidget" name="knobCutoff_7">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimum">
+          <number>-80</number>
+         </property>
+         <property name="maximum">
+          <number>80</number>
+         </property>
+         <property name="color" stdset="0">
+          <color>
+           <red>107</red>
+           <green>223</green>
+           <blue>255</blue>
+          </color>
+         </property>
+         <property name="showtext" stdset="0">
+          <bool>true</bool>
+         </property>
+         <property name="unit" stdset="0">
+          <string>st</string>
+         </property>
+         <property name="numdigits" stdset="0">
+          <number>2</number>
+         </property>
+         <property name="label" stdset="0">
+          <string>detune</string>
+         </property>
+         <property name="linewidth" stdset="0">
+          <double>5.000000000000000</double>
+         </property>
+         <property name="logarithmic" stdset="0">
+          <bool>false</bool>
+         </property>
+         <property name="valmin" stdset="0">
+          <double>-4.000000000000000</double>
+         </property>
+         <property name="valmax" stdset="0">
+          <double>4.000000000000000</double>
+         </property>
+        </widget>
+       </item>
        <item row="1" column="0">
         <widget class="KnobWidget" name="knobCutoff_4">
          <property name="sizePolicy">
@@ -3124,6 +3203,89 @@ QGroupBox::title {
          </property>
          <property name="valmax" stdset="0">
           <double>100.000000000000000</double>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="3" rowspan="3">
+        <widget class="OscillatorWidget" name="oscillatorViewer" native="true">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>10</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(46, 52, 54);</string>
+         </property>
+         <property name="waveamplitude" stdset="0">
+          <double>0.100000000000000</double>
+         </property>
+         <property name="numwaves" stdset="0">
+          <number>4</number>
+         </property>
+         <property name="linewidth" stdset="0">
+          <double>1.500000000000000</double>
+         </property>
+         <property name="color0" stdset="0">
+          <color>
+           <red>159</red>
+           <green>234</green>
+           <blue>255</blue>
+          </color>
+         </property>
+         <property name="color1" stdset="0">
+          <color>
+           <red>107</red>
+           <green>223</green>
+           <blue>255</blue>
+          </color>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="KnobWidget" name="knobShape1">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>1</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimum">
+          <number>0</number>
+         </property>
+         <property name="maximum">
+          <number>100</number>
+         </property>
+         <property name="color" stdset="0">
+          <color>
+           <red>107</red>
+           <green>223</green>
+           <blue>255</blue>
+          </color>
+         </property>
+         <property name="showtext" stdset="0">
+          <bool>true</bool>
+         </property>
+         <property name="unit" stdset="0">
+          <string>%</string>
+         </property>
+         <property name="numdigits" stdset="0">
+          <number>2</number>
+         </property>
+         <property name="label" stdset="0">
+          <string>shape.1</string>
+         </property>
+         <property name="linewidth" stdset="0">
+          <double>5.000000000000000</double>
+         </property>
+         <property name="logarithmic" stdset="0">
+          <bool>false</bool>
+         </property>
+         <property name="valmin" stdset="0">
+          <double>0.000000000000000</double>
+         </property>
+         <property name="valmax" stdset="0">
+          <double>1.000000000000000</double>
          </property>
         </widget>
        </item>
@@ -3171,16 +3333,19 @@ QGroupBox::title {
          </property>
         </widget>
        </item>
-       <item row="2" column="0">
-        <widget class="KnobWidget" name="knobCutoff_7">
+       <item row="0" column="0">
+        <widget class="KnobWidget" name="knobShape0">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-           <horstretch>0</horstretch>
+           <horstretch>1</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
+         <property name="minimum">
+          <number>0</number>
+         </property>
          <property name="maximum">
-          <number>255</number>
+          <number>100</number>
          </property>
          <property name="color" stdset="0">
           <color>
@@ -3193,13 +3358,13 @@ QGroupBox::title {
           <bool>true</bool>
          </property>
          <property name="unit" stdset="0">
-          <string>st</string>
+          <string>%</string>
          </property>
          <property name="numdigits" stdset="0">
           <number>2</number>
          </property>
          <property name="label" stdset="0">
-          <string>detune</string>
+          <string>shape.0</string>
          </property>
          <property name="linewidth" stdset="0">
           <double>5.000000000000000</double>
@@ -3208,10 +3373,10 @@ QGroupBox::title {
           <bool>false</bool>
          </property>
          <property name="valmin" stdset="0">
-          <double>-4.000000000000000</double>
+          <double>0.000000000000000</double>
          </property>
          <property name="valmax" stdset="0">
-          <double>4.000000000000000</double>
+          <double>1.000000000000000</double>
          </property>
         </widget>
        </item>
@@ -3262,136 +3427,6 @@ QGroupBox::title {
          </property>
         </widget>
        </item>
-       <item row="0" column="3" rowspan="3">
-        <widget class="OscillatorWidget" name="widget_3" native="true">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-           <horstretch>10</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(46, 52, 54);</string>
-         </property>
-         <property name="waveamplitude" stdset="0">
-          <double>0.200000000000000</double>
-         </property>
-         <property name="numwaves" stdset="0">
-          <number>20</number>
-         </property>
-         <property name="linewidth" stdset="0">
-          <double>1.500000000000000</double>
-         </property>
-         <property name="color0" stdset="0">
-          <color>
-           <red>159</red>
-           <green>234</green>
-           <blue>255</blue>
-          </color>
-         </property>
-         <property name="color1" stdset="0">
-          <color>
-           <red>107</red>
-           <green>223</green>
-           <blue>255</blue>
-          </color>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="0">
-        <widget class="KnobWidget" name="knobCutoff_2">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-           <horstretch>1</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimum">
-          <number>1</number>
-         </property>
-         <property name="maximum">
-          <number>100</number>
-         </property>
-         <property name="color" stdset="0">
-          <color>
-           <red>107</red>
-           <green>223</green>
-           <blue>255</blue>
-          </color>
-         </property>
-         <property name="showtext" stdset="0">
-          <bool>true</bool>
-         </property>
-         <property name="unit" stdset="0">
-          <string>%</string>
-         </property>
-         <property name="numdigits" stdset="0">
-          <number>0</number>
-         </property>
-         <property name="label" stdset="0">
-          <string>shape.0</string>
-         </property>
-         <property name="linewidth" stdset="0">
-          <double>5.000000000000000</double>
-         </property>
-         <property name="logarithmic" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="valmin" stdset="0">
-          <double>0.000000000000000</double>
-         </property>
-         <property name="valmax" stdset="0">
-          <double>100.000000000000000</double>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="1">
-        <widget class="KnobWidget" name="knobCutoff_3">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-           <horstretch>1</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimum">
-          <number>1</number>
-         </property>
-         <property name="maximum">
-          <number>100</number>
-         </property>
-         <property name="color" stdset="0">
-          <color>
-           <red>107</red>
-           <green>223</green>
-           <blue>255</blue>
-          </color>
-         </property>
-         <property name="showtext" stdset="0">
-          <bool>true</bool>
-         </property>
-         <property name="unit" stdset="0">
-          <string>%</string>
-         </property>
-         <property name="numdigits" stdset="0">
-          <number>0</number>
-         </property>
-         <property name="label" stdset="0">
-          <string>shape.1</string>
-         </property>
-         <property name="linewidth" stdset="0">
-          <double>5.000000000000000</double>
-         </property>
-         <property name="logarithmic" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="valmin" stdset="0">
-          <double>0.000000000000000</double>
-         </property>
-         <property name="valmax" stdset="0">
-          <double>100.000000000000000</double>
-         </property>
-        </widget>
-       </item>
       </layout>
      </widget>
     </item>
@@ -3420,6 +3455,12 @@ QGroupBox::title {
    <class>OscillatorWidget</class>
    <extends>QWidget</extends>
    <header>widgets/oscillatorwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>LfoWidget</class>
+   <extends>QWidget</extends>
+   <header>widgets/lfowidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

@@ -13,7 +13,8 @@ const quint32 PERIOD = 1000;
 class OscillatorWidget : public QWidget
 {
     Q_OBJECT
-    Q_PROPERTY(QColor color READ getColor WRITE setColor)
+    Q_PROPERTY(QColor color0 READ getColor0 WRITE setColor0)
+    Q_PROPERTY(QColor color1 READ getColor1 WRITE setColor1)
     Q_PROPERTY(double linewidth READ getLineWidth WRITE setLineWidth)
     Q_PROPERTY(int numwaves READ getNumWaves WRITE setNumWaves)
     Q_PROPERTY(double waveamplitude READ getWaveAmplitude WRITE setWaveAmplitude)
@@ -36,15 +37,18 @@ public slots:
     void setNumWaves(int n) {_numWaves = n;};
     void setWaveAmplitude(double a) {_waveAmplitude = a;};
 
+    void setShape0(double s) {_shape0 = s; update();};
+    void setShape1(double s) {_shape1 = s; update();};
+
 private:
     QColor _color0 = Qt::white;
     QColor _color1 = Qt::white;
     double _linewidth = 1;
-    int _numWaves = 20;
+    int _numWaves = 4;
     double _waveAmplitude = 0.2;
 
-    int _shape0;
-    int _shape1;
+    double _shape0 = 0;
+    double _shape1 = 0;
 
 };
 
