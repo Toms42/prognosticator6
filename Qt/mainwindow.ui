@@ -138,2229 +138,12 @@
     <bool>false</bool>
    </property>
    <layout class="QGridLayout" name="gridLayout">
-    <item row="2" column="3" rowspan="2">
-     <widget class="QGroupBox" name="groupBox_voice">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-        <horstretch>1</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="font">
-       <font>
-        <family>DIN</family>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QGroupBox {
-    border: 2px solid rgb(221, 148, 255);
-    border-radius: 0px;
-	margin-top: 2.5ex;
-}
-
-QGroupBox::title {
-    /*subcontrol-position: top left; /* position at the top center */
-	color: black;
-	background-color: rgb(221, 148, 255);
-}</string>
-      </property>
-      <property name="title">
-       <string>voice</string>
-      </property>
-      <layout class="QGridLayout" name="gridLayout_9">
-       <item row="1" column="1">
-        <widget class="QFrame" name="frame_7">
-         <property name="frameShape">
-          <enum>QFrame::NoFrame</enum>
-         </property>
-         <property name="frameShadow">
-          <enum>QFrame::Raised</enum>
-         </property>
-         <property name="lineWidth">
-          <number>1</number>
-         </property>
-         <layout class="QVBoxLayout" name="verticalLayout_6">
-          <property name="spacing">
-           <number>0</number>
-          </property>
-          <property name="leftMargin">
-           <number>5</number>
-          </property>
-          <property name="topMargin">
-           <number>5</number>
-          </property>
-          <property name="rightMargin">
-           <number>0</number>
-          </property>
-          <property name="bottomMargin">
-           <number>0</number>
-          </property>
-          <item>
-           <widget class="QRadioButton" name="radioButton_20">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>12</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <family>DIN</family>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QRadioButton {
-	color:  rgb(100,100,100);
-}
-QRadioButton::checked {
-	color: rgb(221, 148, 255);
-}
-
-QRadioButton::indicator {
-    width: 7px;
-    height: 7px;
-	color: rgb(221, 148, 255);
-}
-QRadioButton::indicator::unchecked {
-	opacity: 0%;
-}
-
-QRadioButton::indicator::checked {
-    opacity: 100%;
-	color: rgb(221, 148, 255);
-	selection-color: rgb(221, 148, 255);
-	background-color: rgb(221, 148, 255);
-}
-</string>
-            </property>
-            <property name="text">
-             <string>timbre.single</string>
-            </property>
-            <property name="iconSize">
-             <size>
-              <width>8</width>
-              <height>8</height>
-             </size>
-            </property>
-            <property name="checked">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QRadioButton" name="radioButton_21">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>12</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <family>DIN</family>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QRadioButton {
-	color:  rgb(100,100,100);
-}
-QRadioButton::checked {
-	color: rgb(221, 148, 255);
-}
-
-QRadioButton::indicator {
-    width: 7px;
-    height: 7px;
-	color: rgb(221, 148, 255);
-}
-QRadioButton::indicator::unchecked {
-	opacity: 0%;
-}
-
-QRadioButton::indicator::checked {
-    opacity: 100%;
-	color: rgb(221, 148, 255);
-	selection-color: rgb(221, 148, 255);
-	background-color: rgb(221, 148, 255);
-}
-</string>
-            </property>
-            <property name="text">
-             <string>timbre.stereo</string>
-            </property>
-            <property name="iconSize">
-             <size>
-              <width>8</width>
-              <height>8</height>
-             </size>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QRadioButton" name="radioButton_22">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>12</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <family>DIN</family>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QRadioButton {
-	color:  rgb(100,100,100);
-}
-QRadioButton::checked {
-	color: rgb(221, 148, 255);
-}
-
-QRadioButton::indicator {
-    width: 7px;
-    height: 7px;
-	color: rgb(221, 148, 255);
-}
-QRadioButton::indicator::unchecked {
-	opacity: 0%;
-}
-
-QRadioButton::indicator::checked {
-    opacity: 100%;
-	color: rgb(221, 148, 255);
-	selection-color: rgb(221, 148, 255);
-	background-color: rgb(221, 148, 255);
-}
-</string>
-            </property>
-            <property name="text">
-             <string>timbre.dual</string>
-            </property>
-            <property name="iconSize">
-             <size>
-              <width>8</width>
-              <height>8</height>
-             </size>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QRadioButton" name="radioButton_23">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>12</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <family>DIN</family>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QRadioButton {
-	color:  rgb(100,100,100);
-}
-QRadioButton::checked {
-	color: rgb(221, 148, 255);
-}
-
-QRadioButton::indicator {
-    width: 7px;
-    height: 7px;
-	color: rgb(221, 148, 255);
-}
-QRadioButton::indicator::unchecked {
-	opacity: 0%;
-}
-
-QRadioButton::indicator::checked {
-    opacity: 100%;
-	color: rgb(221, 148, 255);
-	selection-color: rgb(221, 148, 255);
-	background-color: rgb(221, 148, 255);
-}
-</string>
-            </property>
-            <property name="text">
-             <string>timbre.split</string>
-            </property>
-            <property name="iconSize">
-             <size>
-              <width>8</width>
-              <height>8</height>
-             </size>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item row="0" column="1">
-        <widget class="QFrame" name="frame_6">
-         <property name="frameShape">
-          <enum>QFrame::NoFrame</enum>
-         </property>
-         <property name="frameShadow">
-          <enum>QFrame::Raised</enum>
-         </property>
-         <property name="lineWidth">
-          <number>1</number>
-         </property>
-         <layout class="QVBoxLayout" name="verticalLayout_5">
-          <property name="spacing">
-           <number>0</number>
-          </property>
-          <property name="leftMargin">
-           <number>5</number>
-          </property>
-          <property name="topMargin">
-           <number>5</number>
-          </property>
-          <property name="rightMargin">
-           <number>0</number>
-          </property>
-          <property name="bottomMargin">
-           <number>0</number>
-          </property>
-          <item>
-           <widget class="QRadioButton" name="radioButton_15">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>12</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <family>DIN</family>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QRadioButton {
-	color:  rgb(100,100,100);
-}
-QRadioButton::checked {
-	color: rgb(221, 148, 255);
-}
-
-QRadioButton::indicator {
-    width: 7px;
-    height: 7px;
-	color: rgb(221, 148, 255);
-}
-QRadioButton::indicator::unchecked {
-	opacity: 0%;
-}
-
-QRadioButton::indicator::checked {
-    opacity: 100%;
-	color: rgb(221, 148, 255);
-	selection-color: rgb(221, 148, 255);
-	background-color: rgb(221, 148, 255);
-}
-</string>
-            </property>
-            <property name="text">
-             <string>voice.single</string>
-            </property>
-            <property name="iconSize">
-             <size>
-              <width>8</width>
-              <height>8</height>
-             </size>
-            </property>
-            <property name="checked">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QRadioButton" name="radioButton_16">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>12</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <family>DIN</family>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QRadioButton {
-	color:  rgb(100,100,100);
-}
-QRadioButton::checked {
-	color: rgb(221, 148, 255);
-}
-
-QRadioButton::indicator {
-    width: 7px;
-    height: 7px;
-	color: rgb(221, 148, 255);
-}
-QRadioButton::indicator::unchecked {
-	opacity: 0%;
-}
-
-QRadioButton::indicator::checked {
-    opacity: 100%;
-	color: rgb(221, 148, 255);
-	selection-color: rgb(221, 148, 255);
-	background-color: rgb(221, 148, 255);
-}
-</string>
-            </property>
-            <property name="text">
-             <string>voice.mono</string>
-            </property>
-            <property name="iconSize">
-             <size>
-              <width>8</width>
-              <height>8</height>
-             </size>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QRadioButton" name="radioButton_17">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>12</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <family>DIN</family>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QRadioButton {
-	color:  rgb(100,100,100);
-}
-QRadioButton::checked {
-	color: rgb(221, 148, 255);
-}
-
-QRadioButton::indicator {
-    width: 7px;
-    height: 7px;
-	color: rgb(221, 148, 255);
-}
-QRadioButton::indicator::unchecked {
-	opacity: 0%;
-}
-
-QRadioButton::indicator::checked {
-    opacity: 100%;
-	color: rgb(221, 148, 255);
-	selection-color: rgb(221, 148, 255);
-	background-color: rgb(221, 148, 255);
-}
-</string>
-            </property>
-            <property name="text">
-             <string>voice.para</string>
-            </property>
-            <property name="iconSize">
-             <size>
-              <width>8</width>
-              <height>8</height>
-             </size>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QRadioButton" name="radioButton_18">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>12</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <family>DIN</family>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QRadioButton {
-	color:  rgb(100,100,100);
-}
-QRadioButton::checked {
-	color: rgb(221, 148, 255);
-}
-
-QRadioButton::indicator {
-    width: 7px;
-    height: 7px;
-	color: rgb(221, 148, 255);
-}
-QRadioButton::indicator::unchecked {
-	opacity: 0%;
-}
-
-QRadioButton::indicator::checked {
-    opacity: 100%;
-	color: rgb(221, 148, 255);
-	selection-color: rgb(221, 148, 255);
-	background-color: rgb(221, 148, 255);
-}
-</string>
-            </property>
-            <property name="text">
-             <string>voice.duo</string>
-            </property>
-            <property name="iconSize">
-             <size>
-              <width>8</width>
-              <height>8</height>
-             </size>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item row="0" column="0">
-        <widget class="KnobWidget" name="knobResonance_17">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimum">
-          <number>1</number>
-         </property>
-         <property name="maximum">
-          <number>4</number>
-         </property>
-         <property name="color" stdset="0">
-          <color>
-           <red>221</red>
-           <green>148</green>
-           <blue>255</blue>
-          </color>
-         </property>
-         <property name="showtext" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="unit" stdset="0">
-          <string/>
-         </property>
-         <property name="numdigits" stdset="0">
-          <number>0</number>
-         </property>
-         <property name="label" stdset="0">
-          <string>voice</string>
-         </property>
-         <property name="linewidth" stdset="0">
-          <double>5.000000000000000</double>
-         </property>
-         <property name="logarithmic" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="valmin" stdset="0">
-          <double>1.000000000000000</double>
-         </property>
-         <property name="valmax" stdset="0">
-          <double>4.000000000000000</double>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="KnobWidget" name="knobResonance_21">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimum">
-          <number>1</number>
-         </property>
-         <property name="maximum">
-          <number>4</number>
-         </property>
-         <property name="color" stdset="0">
-          <color>
-           <red>221</red>
-           <green>148</green>
-           <blue>255</blue>
-          </color>
-         </property>
-         <property name="showtext" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="unit" stdset="0">
-          <string/>
-         </property>
-         <property name="numdigits" stdset="0">
-          <number>0</number>
-         </property>
-         <property name="label" stdset="0">
-          <string>timbre</string>
-         </property>
-         <property name="linewidth" stdset="0">
-          <double>5.000000000000000</double>
-         </property>
-         <property name="logarithmic" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="valmin" stdset="0">
-          <double>1.000000000000000</double>
-         </property>
-         <property name="valmax" stdset="0">
-          <double>4.000000000000000</double>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="0">
-        <widget class="KnobWidget" name="knobResonance_18">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="maximum">
-          <number>4</number>
-         </property>
-         <property name="singleStep">
-          <number>1</number>
-         </property>
-         <property name="color" stdset="0">
-          <color>
-           <red>221</red>
-           <green>148</green>
-           <blue>255</blue>
-          </color>
-         </property>
-         <property name="showtext" stdset="0">
-          <bool>true</bool>
-         </property>
-         <property name="unit" stdset="0">
-          <string/>
-         </property>
-         <property name="numdigits" stdset="0">
-          <number>0</number>
-         </property>
-         <property name="label" stdset="0">
-          <string>chorus</string>
-         </property>
-         <property name="linewidth" stdset="0">
-          <double>5.000000000000000</double>
-         </property>
-         <property name="logarithmic" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="valmin" stdset="0">
-          <double>0.000000000000000</double>
-         </property>
-         <property name="valmax" stdset="0">
-          <double>4.000000000000000</double>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="1">
-        <widget class="KnobWidget" name="knobResonance_19">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="maximum">
-          <number>1</number>
-         </property>
-         <property name="color" stdset="0">
-          <color>
-           <red>221</red>
-           <green>148</green>
-           <blue>255</blue>
-          </color>
-         </property>
-         <property name="showtext" stdset="0">
-          <bool>true</bool>
-         </property>
-         <property name="unit" stdset="0">
-          <string/>
-         </property>
-         <property name="numdigits" stdset="0">
-          <number>0</number>
-         </property>
-         <property name="label" stdset="0">
-          <string>timbre select</string>
-         </property>
-         <property name="linewidth" stdset="0">
-          <double>5.000000000000000</double>
-         </property>
-         <property name="logarithmic" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="valmin" stdset="0">
-          <double>0.000000000000000</double>
-         </property>
-         <property name="valmax" stdset="0">
-          <double>1.000000000000000</double>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-    </item>
-    <item row="1" column="2">
-     <widget class="QGroupBox" name="groupBox_filter">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-        <horstretch>3</horstretch>
-        <verstretch>2</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="font">
-       <font>
-        <family>DIN</family>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QGroupBox {
-    border: 2px solid rgb(158, 234, 255);
-    border-radius: 0px;
-	margin-top: 2.5ex;
-}
-
-QGroupBox::title {
-    /*subcontrol-position: top left; /* position at the top center */
-	color: black;
-	background-color: rgb(158, 234, 255);
-}</string>
-      </property>
-      <property name="title">
-       <string>filter</string>
-      </property>
-      <layout class="QGridLayout" name="gridLayout_2">
-       <item row="1" column="0">
-        <widget class="KnobWidget" name="knobResonance">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="maximum">
-          <number>255</number>
-         </property>
-         <property name="color" stdset="0">
-          <color>
-           <red>107</red>
-           <green>223</green>
-           <blue>255</blue>
-          </color>
-         </property>
-         <property name="showtext" stdset="0">
-          <bool>true</bool>
-         </property>
-         <property name="unit" stdset="0">
-          <string>dB</string>
-         </property>
-         <property name="numdigits" stdset="0">
-          <number>1</number>
-         </property>
-         <property name="label" stdset="0">
-          <string>resonance</string>
-         </property>
-         <property name="linewidth" stdset="0">
-          <double>5.000000000000000</double>
-         </property>
-         <property name="logarithmic" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="valmin" stdset="0">
-          <double>0.000000000000000</double>
-         </property>
-         <property name="valmax" stdset="0">
-          <double>40.000000000000000</double>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="0">
-        <widget class="KnobWidget" name="knobCutoff">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="maximum">
-          <number>255</number>
-         </property>
-         <property name="color" stdset="0">
-          <color>
-           <red>107</red>
-           <green>223</green>
-           <blue>255</blue>
-          </color>
-         </property>
-         <property name="showtext" stdset="0">
-          <bool>true</bool>
-         </property>
-         <property name="unit" stdset="0">
-          <string>Hz</string>
-         </property>
-         <property name="numdigits" stdset="0">
-          <number>0</number>
-         </property>
-         <property name="label" stdset="0">
-          <string>cutoff</string>
-         </property>
-         <property name="linewidth" stdset="0">
-          <double>5.000000000000000</double>
-         </property>
-         <property name="logarithmic" stdset="0">
-          <bool>true</bool>
-         </property>
-         <property name="valmin" stdset="0">
-          <double>10.000000000000000</double>
-         </property>
-         <property name="valmax" stdset="0">
-          <double>20000.000000000000000</double>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="1" rowspan="2">
-        <widget class="FilterWidget" name="envelopeViewer" native="true">
-         <property name="autoFillBackground">
-          <bool>false</bool>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(46, 52, 54);</string>
-         </property>
-         <property name="color0" stdset="0">
-          <color>
-           <red>107</red>
-           <green>223</green>
-           <blue>255</blue>
-          </color>
-         </property>
-         <property name="color1" stdset="0">
-          <color>
-           <red>159</red>
-           <green>234</green>
-           <blue>255</blue>
-          </color>
-         </property>
-         <property name="linewidth" stdset="0">
-          <double>1.500000000000000</double>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-    </item>
-    <item row="0" column="3">
-     <widget class="QGroupBox" name="groupBox_lfo0">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-        <horstretch>1</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="font">
-       <font>
-        <family>DIN</family>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QGroupBox {
-    border: 2px solid rgb(255,164,94);
-    border-radius: 0px;
-	margin-top: 2.5ex;
-}
-
-QGroupBox::title {
-    /*subcontrol-position: top left; /* position at the top center */
-	color: black;
-	background-color: rgb(255,164,94);
-}</string>
-      </property>
-      <property name="title">
-       <string>lfo.0</string>
-      </property>
-      <layout class="QGridLayout" name="gridLayout_6">
-       <item row="0" column="0" colspan="2">
-        <widget class="LfoWidget" name="lfoViewer0" native="true">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>15</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(46, 52, 54);</string>
-         </property>
-         <property name="color" stdset="0">
-          <color>
-           <red>255</red>
-           <green>164</green>
-           <blue>94</blue>
-          </color>
-         </property>
-         <property name="linewidth" stdset="0">
-          <double>1.500000000000000</double>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="KnobWidget" name="knobLfoFreq0">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>10</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="maximum">
-          <number>255</number>
-         </property>
-         <property name="color" stdset="0">
-          <color>
-           <red>255</red>
-           <green>164</green>
-           <blue>94</blue>
-          </color>
-         </property>
-         <property name="showtext" stdset="0">
-          <bool>true</bool>
-         </property>
-         <property name="unit" stdset="0">
-          <string>Hz</string>
-         </property>
-         <property name="numdigits" stdset="0">
-          <number>2</number>
-         </property>
-         <property name="label" stdset="0">
-          <string>frequency</string>
-         </property>
-         <property name="linewidth" stdset="0">
-          <double>5.000000000000000</double>
-         </property>
-         <property name="logarithmic" stdset="0">
-          <bool>true</bool>
-         </property>
-         <property name="valmin" stdset="0">
-          <double>0.020000000000000</double>
-         </property>
-         <property name="valmax" stdset="0">
-          <double>20.000000000000000</double>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="1">
-        <widget class="KnobWidget" name="knobLfoShape0">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>10</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimum">
-          <number>0</number>
-         </property>
-         <property name="maximum">
-          <number>4</number>
-         </property>
-         <property name="color" stdset="0">
-          <color>
-           <red>255</red>
-           <green>164</green>
-           <blue>94</blue>
-          </color>
-         </property>
-         <property name="showtext" stdset="0">
-          <bool>true</bool>
-         </property>
-         <property name="unit" stdset="0">
-          <string/>
-         </property>
-         <property name="numdigits" stdset="0">
-          <number>0</number>
-         </property>
-         <property name="label" stdset="0">
-          <string>shape</string>
-         </property>
-         <property name="linewidth" stdset="0">
-          <double>5.000000000000000</double>
-         </property>
-         <property name="logarithmic" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="valmin" stdset="0">
-          <double>1.000000000000000</double>
-         </property>
-         <property name="valmax" stdset="0">
-          <double>5.000000000000000</double>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-    </item>
-    <item row="2" column="1">
-     <widget class="QGroupBox" name="groupBox_midi">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-        <horstretch>1</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="font">
-       <font>
-        <family>DIN</family>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QGroupBox {
-    border: 2px solid rgb(255, 124, 112);
-    border-radius: 0px;
-	margin-top: 2.5ex;
-}
-
-QGroupBox::title {
-    /*subcontrol-position: top left; /* position at the top center */
-	color: black;
-	background-color: rgb(255, 124, 112)
-;
-}</string>
-      </property>
-      <property name="title">
-       <string>midi</string>
-      </property>
-      <layout class="QGridLayout" name="gridLayout_8">
-       <item row="0" column="0" rowspan="2">
-        <widget class="QFrame" name="frame">
-         <property name="frameShape">
-          <enum>QFrame::NoFrame</enum>
-         </property>
-         <property name="frameShadow">
-          <enum>QFrame::Raised</enum>
-         </property>
-         <property name="lineWidth">
-          <number>1</number>
-         </property>
-         <layout class="QVBoxLayout" name="verticalLayout">
-          <property name="spacing">
-           <number>0</number>
-          </property>
-          <property name="leftMargin">
-           <number>0</number>
-          </property>
-          <property name="topMargin">
-           <number>0</number>
-          </property>
-          <property name="rightMargin">
-           <number>0</number>
-          </property>
-          <property name="bottomMargin">
-           <number>0</number>
-          </property>
-          <item>
-           <widget class="QRadioButton" name="radioButton_2">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>12</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <family>DIN</family>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QRadioButton {
-	color:  rgb(100,100,100);
-}
-QRadioButton::checked {
-	color: rgb(255, 124, 112);
-}
-
-QRadioButton::indicator {
-    width: 7px;
-    height: 7px;
-	color: rgb(255, 124, 112);
-}
-QRadioButton::indicator::unchecked {
-	opacity: 0%;
-}
-
-QRadioButton::indicator::checked {
-    opacity: 100%;
-	color: rgb(255, 124, 112);
-	selection-color: rgb(255, 124, 112);
-	background-color: rgb(255, 124, 112);
-}
-</string>
-            </property>
-            <property name="text">
-             <string>chord.off</string>
-            </property>
-            <property name="iconSize">
-             <size>
-              <width>8</width>
-              <height>8</height>
-             </size>
-            </property>
-            <property name="checked">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QRadioButton" name="radioButton_3">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>12</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <family>DIN</family>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QRadioButton {
-	color:  rgb(100,100,100);
-}
-QRadioButton::checked {
-	color: rgb(255, 124, 112);
-}
-
-QRadioButton::indicator {
-    width: 7px;
-    height: 7px;
-	color: rgb(255, 124, 112);
-}
-QRadioButton::indicator::unchecked {
-	opacity: 0%;
-}
-
-QRadioButton::indicator::checked {
-    opacity: 100%;
-	color: rgb(255, 124, 112);
-	selection-color: rgb(255, 124, 112);
-	background-color: rgb(255, 124, 112);
-}
-</string>
-            </property>
-            <property name="text">
-             <string>chord.minor</string>
-            </property>
-            <property name="iconSize">
-             <size>
-              <width>8</width>
-              <height>8</height>
-             </size>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QRadioButton" name="radioButton">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>12</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <family>DIN</family>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QRadioButton {
-	color:  rgb(100,100,100);
-}
-QRadioButton::checked {
-	color: rgb(255, 124, 112);
-}
-
-QRadioButton::indicator {
-    width: 7px;
-    height: 7px;
-	color: rgb(255, 124, 112);
-}
-QRadioButton::indicator::unchecked {
-	opacity: 0%;
-}
-
-QRadioButton::indicator::checked {
-    opacity: 100%;
-	color: rgb(255, 124, 112);
-	selection-color: rgb(255, 124, 112);
-	background-color: rgb(255, 124, 112);
-}
-</string>
-            </property>
-            <property name="text">
-             <string>chord.major</string>
-            </property>
-            <property name="iconSize">
-             <size>
-              <width>8</width>
-              <height>8</height>
-             </size>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QRadioButton" name="radioButton_4">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>12</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <family>DIN</family>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QRadioButton {
-	color:  rgb(100,100,100);
-}
-QRadioButton::checked {
-	color: rgb(255, 124, 112);
-}
-
-QRadioButton::indicator {
-    width: 7px;
-    height: 7px;
-	color: rgb(255, 124, 112);
-}
-QRadioButton::indicator::unchecked {
-	opacity: 0%;
-}
-
-QRadioButton::indicator::checked {
-    opacity: 100%;
-	color: rgb(255, 124, 112);
-	selection-color: rgb(255, 124, 112);
-	background-color: rgb(255, 124, 112);
-}
-</string>
-            </property>
-            <property name="text">
-             <string>chord.key3</string>
-            </property>
-            <property name="iconSize">
-             <size>
-              <width>8</width>
-              <height>8</height>
-             </size>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QRadioButton" name="radioButton_5">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>12</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <family>DIN</family>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QRadioButton {
-	color:  rgb(100,100,100);
-}
-QRadioButton::checked {
-	color: rgb(255, 124, 112);
-}
-
-QRadioButton::indicator {
-    width: 7px;
-    height: 7px;
-	color: rgb(255, 124, 112);
-}
-QRadioButton::indicator::unchecked {
-	opacity: 0%;
-}
-
-QRadioButton::indicator::checked {
-    opacity: 100%;
-	color: rgb(255, 124, 112);
-	selection-color: rgb(255, 124, 112);
-	background-color: rgb(255, 124, 112);
-}
-</string>
-            </property>
-            <property name="text">
-             <string>chord.key7</string>
-            </property>
-            <property name="iconSize">
-             <size>
-              <width>8</width>
-              <height>8</height>
-             </size>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item row="0" column="3">
-        <widget class="KnobWidget" name="knobResonance_14">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimum">
-          <number>1</number>
-         </property>
-         <property name="maximum">
-          <number>3</number>
-         </property>
-         <property name="color" stdset="0">
-          <color>
-           <red>255</red>
-           <green>124</green>
-           <blue>112</blue>
-          </color>
-         </property>
-         <property name="showtext" stdset="0">
-          <bool>true</bool>
-         </property>
-         <property name="unit" stdset="0">
-          <string/>
-         </property>
-         <property name="numdigits" stdset="0">
-          <number>0</number>
-         </property>
-         <property name="label" stdset="0">
-          <string>arp.steps</string>
-         </property>
-         <property name="linewidth" stdset="0">
-          <double>5.000000000000000</double>
-         </property>
-         <property name="logarithmic" stdset="0">
-          <bool>true</bool>
-         </property>
-         <property name="valmin" stdset="0">
-          <double>1.000000000000000</double>
-         </property>
-         <property name="valmax" stdset="0">
-          <double>3.000000000000000</double>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="2">
-        <widget class="QFrame" name="frame_3">
-         <property name="frameShape">
-          <enum>QFrame::NoFrame</enum>
-         </property>
-         <property name="frameShadow">
-          <enum>QFrame::Raised</enum>
-         </property>
-         <property name="lineWidth">
-          <number>1</number>
-         </property>
-         <layout class="QVBoxLayout" name="verticalLayout_2">
-          <property name="spacing">
-           <number>0</number>
-          </property>
-          <property name="leftMargin">
-           <number>0</number>
-          </property>
-          <property name="topMargin">
-           <number>0</number>
-          </property>
-          <property name="rightMargin">
-           <number>0</number>
-          </property>
-          <property name="bottomMargin">
-           <number>0</number>
-          </property>
-          <item>
-           <widget class="QRadioButton" name="radioButton_9">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>12</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <family>DIN</family>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QRadioButton {
-	color:  rgb(100,100,100);
-}
-QRadioButton::checked {
-	color: rgb(255, 124, 112);
-}
-
-QRadioButton::indicator {
-    width: 7px;
-    height: 7px;
-	color: rgb(255, 124, 112);
-}
-QRadioButton::indicator::unchecked {
-	opacity: 0%;
-}
-
-QRadioButton::indicator::checked {
-    opacity: 100%;
-	color: rgb(255, 124, 112);
-	selection-color: rgb(255, 124, 112);
-	background-color: rgb(255, 124, 112);
-}
-</string>
-            </property>
-            <property name="text">
-             <string>arp.off</string>
-            </property>
-            <property name="iconSize">
-             <size>
-              <width>8</width>
-              <height>8</height>
-             </size>
-            </property>
-            <property name="checked">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QRadioButton" name="radioButton_6">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>12</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <family>DIN</family>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QRadioButton {
-	color:  rgb(100,100,100);
-}
-QRadioButton::checked {
-	color: rgb(255, 124, 112);
-}
-
-QRadioButton::indicator {
-    width: 7px;
-    height: 7px;
-	color: rgb(255, 124, 112);
-}
-QRadioButton::indicator::unchecked {
-	opacity: 0%;
-}
-
-QRadioButton::indicator::checked {
-    opacity: 100%;
-	color: rgb(255, 124, 112);
-	selection-color: rgb(255, 124, 112);
-	background-color: rgb(255, 124, 112);
-}
-</string>
-            </property>
-            <property name="text">
-             <string>arp.up</string>
-            </property>
-            <property name="iconSize">
-             <size>
-              <width>8</width>
-              <height>8</height>
-             </size>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QRadioButton" name="radioButton_7">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>12</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <family>DIN</family>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QRadioButton {
-	color:  rgb(100,100,100);
-}
-QRadioButton::checked {
-	color: rgb(255, 124, 112);
-}
-
-QRadioButton::indicator {
-    width: 7px;
-    height: 7px;
-	color: rgb(255, 124, 112);
-}
-QRadioButton::indicator::unchecked {
-	opacity: 0%;
-}
-
-QRadioButton::indicator::checked {
-    opacity: 100%;
-	color: rgb(255, 124, 112);
-	selection-color: rgb(255, 124, 112);
-	background-color: rgb(255, 124, 112);
-}
-</string>
-            </property>
-            <property name="text">
-             <string>arp.down</string>
-            </property>
-            <property name="iconSize">
-             <size>
-              <width>8</width>
-              <height>8</height>
-             </size>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QRadioButton" name="radioButton_8">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>12</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <family>DIN</family>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QRadioButton {
-	color:  rgb(100,100,100);
-}
-QRadioButton::checked {
-	color: rgb(255, 124, 112);
-}
-
-QRadioButton::indicator {
-    width: 7px;
-    height: 7px;
-	color: rgb(255, 124, 112);
-}
-QRadioButton::indicator::unchecked {
-	opacity: 0%;
-}
-
-QRadioButton::indicator::checked {
-    opacity: 100%;
-	color: rgb(255, 124, 112);
-	selection-color: rgb(255, 124, 112);
-	background-color: rgb(255, 124, 112);
-}
-</string>
-            </property>
-            <property name="text">
-             <string>arp.updn</string>
-            </property>
-            <property name="iconSize">
-             <size>
-              <width>8</width>
-              <height>8</height>
-             </size>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QRadioButton" name="radioButton_10">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>12</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <family>DIN</family>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QRadioButton {
-	color:  rgb(100,100,100);
-}
-QRadioButton::checked {
-	color: rgb(255, 124, 112);
-}
-
-QRadioButton::indicator {
-    width: 7px;
-    height: 7px;
-	color: rgb(255, 124, 112);
-}
-QRadioButton::indicator::unchecked {
-	opacity: 0%;
-}
-
-QRadioButton::indicator::checked {
-    opacity: 100%;
-	color: rgb(255, 124, 112);
-	selection-color: rgb(255, 124, 112);
-	background-color: rgb(255, 124, 112);
-}
-</string>
-            </property>
-            <property name="text">
-             <string>arp.rand</string>
-            </property>
-            <property name="iconSize">
-             <size>
-              <width>8</width>
-              <height>8</height>
-             </size>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item row="0" column="4">
-        <widget class="KnobWidget" name="knobResonance_15">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimum">
-          <number>10</number>
-         </property>
-         <property name="maximum">
-          <number>300</number>
-         </property>
-         <property name="color" stdset="0">
-          <color>
-           <red>255</red>
-           <green>124</green>
-           <blue>112</blue>
-          </color>
-         </property>
-         <property name="showtext" stdset="0">
-          <bool>true</bool>
-         </property>
-         <property name="unit" stdset="0">
-          <string>bm</string>
-         </property>
-         <property name="numdigits" stdset="0">
-          <number>0</number>
-         </property>
-         <property name="label" stdset="0">
-          <string>tempo</string>
-         </property>
-         <property name="linewidth" stdset="0">
-          <double>5.000000000000000</double>
-         </property>
-         <property name="logarithmic" stdset="0">
-          <bool>true</bool>
-         </property>
-         <property name="valmin" stdset="0">
-          <double>10.000000000000000</double>
-         </property>
-         <property name="valmax" stdset="0">
-          <double>300.000000000000000</double>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="5">
-        <widget class="KnobWidget" name="knobResonance_16">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimum">
-          <number>1</number>
-         </property>
-         <property name="maximum">
-          <number>12</number>
-         </property>
-         <property name="color" stdset="0">
-          <color>
-           <red>255</red>
-           <green>124</green>
-           <blue>112</blue>
-          </color>
-         </property>
-         <property name="showtext" stdset="0">
-          <bool>true</bool>
-         </property>
-         <property name="unit" stdset="0">
-          <string/>
-         </property>
-         <property name="numdigits" stdset="0">
-          <number>0</number>
-         </property>
-         <property name="label" stdset="0">
-          <string>key</string>
-         </property>
-         <property name="linewidth" stdset="0">
-          <double>5.000000000000000</double>
-         </property>
-         <property name="logarithmic" stdset="0">
-          <bool>true</bool>
-         </property>
-         <property name="valmin" stdset="0">
-          <double>1.000000000000000</double>
-         </property>
-         <property name="valmax" stdset="0">
-          <double>12.000000000000000</double>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-    </item>
-    <item row="0" column="1">
-     <widget class="QGroupBox" name="groupBox_ampenv">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-        <horstretch>2</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="font">
-       <font>
-        <family>DIN</family>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QGroupBox {
-    border: 2px solid rgb(166, 255, 208);
-    border-radius: 0px;
-	margin-top: 2.5ex;
-}
-
-QGroupBox::title {
-    /*subcontrol-position: top left; /* position at the top center */
-	color: black;
-	background-color: rgb(166, 255, 208);
-}</string>
-      </property>
-      <property name="title">
-       <string>amplifier.envelope</string>
-      </property>
-      <layout class="QGridLayout" name="gridLayout_4">
-       <item row="1" column="2">
-        <widget class="KnobWidget" name="ampKnobSustain">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="maximum">
-          <number>255</number>
-         </property>
-         <property name="color" stdset="0">
-          <color>
-           <red>166</red>
-           <green>255</green>
-           <blue>208</blue>
-          </color>
-         </property>
-         <property name="showtext" stdset="0">
-          <bool>true</bool>
-         </property>
-         <property name="unit" stdset="0">
-          <string>%</string>
-         </property>
-         <property name="numdigits" stdset="0">
-          <number>0</number>
-         </property>
-         <property name="label" stdset="0">
-          <string>sustain</string>
-         </property>
-         <property name="linewidth" stdset="0">
-          <double>5.000000000000000</double>
-         </property>
-         <property name="logarithmic" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="valmin" stdset="0">
-          <double>0.000000000000000</double>
-         </property>
-         <property name="valmax" stdset="0">
-          <double>100.000000000000000</double>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="1">
-        <widget class="KnobWidget" name="ampKnobDecay">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="maximum">
-          <number>255</number>
-         </property>
-         <property name="color" stdset="0">
-          <color>
-           <red>166</red>
-           <green>255</green>
-           <blue>208</blue>
-          </color>
-         </property>
-         <property name="showtext" stdset="0">
-          <bool>true</bool>
-         </property>
-         <property name="unit" stdset="0">
-          <string>s</string>
-         </property>
-         <property name="numdigits" stdset="0">
-          <number>2</number>
-         </property>
-         <property name="label" stdset="0">
-          <string>decay</string>
-         </property>
-         <property name="linewidth" stdset="0">
-          <double>5.000000000000000</double>
-         </property>
-         <property name="logarithmic" stdset="0">
-          <bool>true</bool>
-         </property>
-         <property name="valmin" stdset="0">
-          <double>0.010000000000000</double>
-         </property>
-         <property name="valmax" stdset="0">
-          <double>10.000000000000000</double>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="KnobWidget" name="ampKnobAttack">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="maximum">
-          <number>255</number>
-         </property>
-         <property name="color" stdset="0">
-          <color>
-           <red>166</red>
-           <green>255</green>
-           <blue>208</blue>
-          </color>
-         </property>
-         <property name="showtext" stdset="0">
-          <bool>true</bool>
-         </property>
-         <property name="unit" stdset="0">
-          <string>s</string>
-         </property>
-         <property name="numdigits" stdset="0">
-          <number>2</number>
-         </property>
-         <property name="label" stdset="0">
-          <string>attack</string>
-         </property>
-         <property name="linewidth" stdset="0">
-          <double>5.000000000000000</double>
-         </property>
-         <property name="logarithmic" stdset="0">
-          <bool>true</bool>
-         </property>
-         <property name="valmin" stdset="0">
-          <double>0.010000000000000</double>
-         </property>
-         <property name="valmax" stdset="0">
-          <double>10.000000000000000</double>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="3">
-        <widget class="KnobWidget" name="ampKnobRelease">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>10</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="maximum">
-          <number>255</number>
-         </property>
-         <property name="color" stdset="0">
-          <color>
-           <red>166</red>
-           <green>255</green>
-           <blue>208</blue>
-          </color>
-         </property>
-         <property name="showtext" stdset="0">
-          <bool>true</bool>
-         </property>
-         <property name="unit" stdset="0">
-          <string>s</string>
-         </property>
-         <property name="numdigits" stdset="0">
-          <number>2</number>
-         </property>
-         <property name="label" stdset="0">
-          <string>release</string>
-         </property>
-         <property name="linewidth" stdset="0">
-          <double>5.000000000000000</double>
-         </property>
-         <property name="logarithmic" stdset="0">
-          <bool>true</bool>
-         </property>
-         <property name="valmin" stdset="0">
-          <double>0.010000000000000</double>
-         </property>
-         <property name="valmax" stdset="0">
-          <double>100.000000000000000</double>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="0" colspan="4">
-        <widget class="EnvelopeWidget" name="widget_2" native="true">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>15</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(46, 52, 54);</string>
-         </property>
-         <property name="linewidth" stdset="0">
-          <double>1.500000000000000</double>
-         </property>
-         <property name="color" stdset="0">
-          <color>
-           <red>166</red>
-           <green>255</green>
-           <blue>208</blue>
-          </color>
-         </property>
-         <property name="knobattack" stdset="0">
-          <string notr="true">ampKnobAttack</string>
-         </property>
-         <property name="knobdecay" stdset="0">
-          <string notr="true">ampKnobDecay</string>
-         </property>
-         <property name="knobsustain" stdset="0">
-          <string notr="true">ampKnobSustain</string>
-         </property>
-         <property name="knobrelease" stdset="0">
-          <string notr="true">ampKnobRelease</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-    </item>
-    <item row="0" column="4">
-     <spacer name="horizontalSpacer_2">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-      <property name="sizeType">
-       <enum>QSizePolicy::Fixed</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>10</width>
-        <height>20</height>
-       </size>
-      </property>
-     </spacer>
-    </item>
-    <item row="1" column="3">
-     <widget class="QGroupBox" name="groupBox_lfo1">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-        <horstretch>1</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="font">
-       <font>
-        <family>DIN</family>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QGroupBox {
-    border: 2px solid rgb(255,164,94);
-    border-radius: 0px;
-	margin-top: 2.5ex;
-}
-
-QGroupBox::title {
-    /*subcontrol-position: top left; /* position at the top center */
-	color: black;
-	background-color: rgb(255,164,94);
-}</string>
-      </property>
-      <property name="title">
-       <string>lfo.1</string>
-      </property>
-      <layout class="QGridLayout" name="gridLayout_7">
-       <item row="1" column="1">
-        <widget class="KnobWidget" name="knobLfoShape1">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>10</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimum">
-          <number>0</number>
-         </property>
-         <property name="maximum">
-          <number>4</number>
-         </property>
-         <property name="color" stdset="0">
-          <color>
-           <red>255</red>
-           <green>164</green>
-           <blue>94</blue>
-          </color>
-         </property>
-         <property name="showtext" stdset="0">
-          <bool>true</bool>
-         </property>
-         <property name="unit" stdset="0">
-          <string/>
-         </property>
-         <property name="numdigits" stdset="0">
-          <number>0</number>
-         </property>
-         <property name="label" stdset="0">
-          <string>shape</string>
-         </property>
-         <property name="linewidth" stdset="0">
-          <double>5.000000000000000</double>
-         </property>
-         <property name="logarithmic" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="valmin" stdset="0">
-          <double>1.000000000000000</double>
-         </property>
-         <property name="valmax" stdset="0">
-          <double>5.000000000000000</double>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="KnobWidget" name="knobLfoFreq1">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>10</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="maximum">
-          <number>255</number>
-         </property>
-         <property name="color" stdset="0">
-          <color>
-           <red>255</red>
-           <green>164</green>
-           <blue>94</blue>
-          </color>
-         </property>
-         <property name="showtext" stdset="0">
-          <bool>true</bool>
-         </property>
-         <property name="unit" stdset="0">
-          <string>Hz</string>
-         </property>
-         <property name="numdigits" stdset="0">
-          <number>2</number>
-         </property>
-         <property name="label" stdset="0">
-          <string>frequency</string>
-         </property>
-         <property name="linewidth" stdset="0">
-          <double>5.000000000000000</double>
-         </property>
-         <property name="logarithmic" stdset="0">
-          <bool>true</bool>
-         </property>
-         <property name="valmin" stdset="0">
-          <double>0.020000000000000</double>
-         </property>
-         <property name="valmax" stdset="0">
-          <double>20.000000000000000</double>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="0" colspan="2">
-        <widget class="LfoWidget" name="lfoViewer1" native="true">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>15</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(46, 52, 54);</string>
-         </property>
-         <property name="color" stdset="0">
-          <color>
-           <red>255</red>
-           <green>164</green>
-           <blue>94</blue>
-          </color>
-         </property>
-         <property name="linewidth" stdset="0">
-          <double>1.500000000000000</double>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-    </item>
     <item row="1" column="1">
      <widget class="QGroupBox" name="groupBox_filtenv">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
         <horstretch>2</horstretch>
-        <verstretch>0</verstretch>
+        <verstretch>6</verstretch>
        </sizepolicy>
       </property>
       <property name="font">
@@ -2562,7 +345,7 @@ QGroupBox::title {
         </widget>
        </item>
        <item row="0" column="0" colspan="4">
-        <widget class="EnvelopeWidget" name="widget" native="true">
+        <widget class="EnvelopeWidget" name="filterEnvViewer" native="true">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
            <horstretch>0</horstretch>
@@ -2615,12 +398,160 @@ QGroupBox::title {
       </property>
      </spacer>
     </item>
+    <item row="1" column="2">
+     <widget class="QGroupBox" name="groupBox_filter">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>3</horstretch>
+        <verstretch>2</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>DIN</family>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QGroupBox {
+    border: 2px solid rgb(158, 234, 255);
+    border-radius: 0px;
+	margin-top: 2.5ex;
+}
+
+QGroupBox::title {
+    /*subcontrol-position: top left; /* position at the top center */
+	color: black;
+	background-color: rgb(158, 234, 255);
+}</string>
+      </property>
+      <property name="title">
+       <string>filter</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="0" column="0">
+        <widget class="KnobWidget" name="knobCutoff">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximum">
+          <number>255</number>
+         </property>
+         <property name="color" stdset="0">
+          <color>
+           <red>107</red>
+           <green>223</green>
+           <blue>255</blue>
+          </color>
+         </property>
+         <property name="showtext" stdset="0">
+          <bool>true</bool>
+         </property>
+         <property name="unit" stdset="0">
+          <string>Hz</string>
+         </property>
+         <property name="numdigits" stdset="0">
+          <number>0</number>
+         </property>
+         <property name="label" stdset="0">
+          <string>cutoff</string>
+         </property>
+         <property name="linewidth" stdset="0">
+          <double>5.000000000000000</double>
+         </property>
+         <property name="logarithmic" stdset="0">
+          <bool>true</bool>
+         </property>
+         <property name="valmin" stdset="0">
+          <double>10.000000000000000</double>
+         </property>
+         <property name="valmax" stdset="0">
+          <double>20000.000000000000000</double>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1" rowspan="3">
+        <widget class="FilterWidget" name="envelopeViewer" native="true">
+         <property name="autoFillBackground">
+          <bool>false</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(46, 52, 54);</string>
+         </property>
+         <property name="color0" stdset="0">
+          <color>
+           <red>107</red>
+           <green>223</green>
+           <blue>255</blue>
+          </color>
+         </property>
+         <property name="color1" stdset="0">
+          <color>
+           <red>159</red>
+           <green>234</green>
+           <blue>255</blue>
+          </color>
+         </property>
+         <property name="linewidth" stdset="0">
+          <double>1.500000000000000</double>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="KnobWidget" name="knobResonance">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximum">
+          <number>255</number>
+         </property>
+         <property name="color" stdset="0">
+          <color>
+           <red>107</red>
+           <green>223</green>
+           <blue>255</blue>
+          </color>
+         </property>
+         <property name="showtext" stdset="0">
+          <bool>true</bool>
+         </property>
+         <property name="unit" stdset="0">
+          <string>dB</string>
+         </property>
+         <property name="numdigits" stdset="0">
+          <number>1</number>
+         </property>
+         <property name="label" stdset="0">
+          <string>resonance</string>
+         </property>
+         <property name="linewidth" stdset="0">
+          <double>5.000000000000000</double>
+         </property>
+         <property name="logarithmic" stdset="0">
+          <bool>false</bool>
+         </property>
+         <property name="valmin" stdset="0">
+          <double>0.000000000000000</double>
+         </property>
+         <property name="valmax" stdset="0">
+          <double>40.000000000000000</double>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
     <item row="3" column="1">
      <widget class="QGroupBox" name="groupBox_patch">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
         <horstretch>1</horstretch>
-        <verstretch>0</verstretch>
+        <verstretch>3</verstretch>
        </sizepolicy>
       </property>
       <property name="font">
@@ -2645,12 +576,12 @@ QGroupBox::title {
       <property name="title">
        <string>patch</string>
       </property>
-      <widget class="QLabel" name="label">
+      <widget class="QLabel" name="labelCurPatch">
        <property name="geometry">
         <rect>
-         <x>80</x>
-         <y>40</y>
-         <width>111</width>
+         <x>160</x>
+         <y>50</y>
+         <width>71</width>
          <height>31</height>
         </rect>
        </property>
@@ -2668,11 +599,11 @@ QGroupBox::title {
         <string>123</string>
        </property>
       </widget>
-      <widget class="QLabel" name="label_2">
+      <widget class="QLabel" name="labelNextPatch">
        <property name="geometry">
         <rect>
-         <x>120</x>
-         <y>70</y>
+         <x>200</x>
+         <y>80</y>
          <width>41</width>
          <height>20</height>
         </rect>
@@ -2691,11 +622,11 @@ QGroupBox::title {
         <string>134</string>
        </property>
       </widget>
-      <widget class="QLabel" name="label_3">
+      <widget class="QLabel" name="labelText">
        <property name="geometry">
         <rect>
-         <x>16</x>
-         <y>50</y>
+         <x>96</x>
+         <y>60</y>
          <width>61</width>
          <height>20</height>
         </rect>
@@ -2714,12 +645,12 @@ QGroupBox::title {
         <string>current</string>
        </property>
       </widget>
-      <widget class="QLabel" name="label_4">
+      <widget class="QLabel" name="labelLoad">
        <property name="geometry">
         <rect>
-         <x>210</x>
-         <y>40</y>
-         <width>61</width>
+         <x>270</x>
+         <y>49</y>
+         <width>51</width>
          <height>20</height>
         </rect>
        </property>
@@ -2737,12 +668,12 @@ QGroupBox::title {
         <string>load?</string>
        </property>
       </widget>
-      <widget class="QLabel" name="label_5">
+      <widget class="QLabel" name="labelSave">
        <property name="geometry">
         <rect>
-         <x>310</x>
-         <y>40</y>
-         <width>61</width>
+         <x>330</x>
+         <y>49</y>
+         <width>51</width>
          <height>20</height>
         </rect>
        </property>
@@ -2760,61 +691,34 @@ QGroupBox::title {
         <string>save?</string>
        </property>
       </widget>
-      <widget class="QFrame" name="frame_4">
+      <widget class="QRadioButton" name="radioLoadNo">
        <property name="geometry">
         <rect>
-         <x>200</x>
-         <y>60</y>
-         <width>75</width>
-         <height>31</height>
+         <x>270</x>
+         <y>84</y>
+         <width>41</width>
+         <height>16</height>
         </rect>
        </property>
-       <property name="frameShape">
-        <enum>QFrame::NoFrame</enum>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
        </property>
-       <property name="frameShadow">
-        <enum>QFrame::Raised</enum>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>12</height>
+        </size>
        </property>
-       <property name="lineWidth">
-        <number>1</number>
+       <property name="font">
+        <font>
+         <family>DIN</family>
+        </font>
        </property>
-       <layout class="QVBoxLayout" name="verticalLayout_3">
-        <property name="spacing">
-         <number>0</number>
-        </property>
-        <property name="leftMargin">
-         <number>10</number>
-        </property>
-        <property name="topMargin">
-         <number>0</number>
-        </property>
-        <property name="rightMargin">
-         <number>0</number>
-        </property>
-        <property name="bottomMargin">
-         <number>0</number>
-        </property>
-        <item>
-         <widget class="QRadioButton" name="radioButton_12">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>12</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <family>DIN</family>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QRadioButton {
+       <property name="styleSheet">
+        <string notr="true">QRadioButton {
 	color:  rgb(100,100,100);
 }
 QRadioButton::checked {
@@ -2837,130 +741,45 @@ QRadioButton::indicator::checked {
 	background-color: rgb(255, 124, 112);
 }
 </string>
-          </property>
-          <property name="text">
-           <string>yes</string>
-          </property>
-          <property name="iconSize">
-           <size>
-            <width>8</width>
-            <height>8</height>
-           </size>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QRadioButton" name="radioButton_11">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>12</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <family>DIN</family>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QRadioButton {
-	color:  rgb(100,100,100);
-}
-QRadioButton::checked {
-	color: rgb(255, 124, 112);
-}
-
-QRadioButton::indicator {
-    width: 7px;
-    height: 7px;
-	color: rgb(255, 124, 112);
-}
-QRadioButton::indicator::unchecked {
-	opacity: 0%;
-}
-
-QRadioButton::indicator::checked {
-    opacity: 100%;
-	color: rgb(255, 124, 112);
-	selection-color: rgb(255, 124, 112);
-	background-color: rgb(255, 124, 112);
-}
-</string>
-          </property>
-          <property name="text">
-           <string>no</string>
-          </property>
-          <property name="iconSize">
-           <size>
-            <width>8</width>
-            <height>8</height>
-           </size>
-          </property>
-         </widget>
-        </item>
-       </layout>
+       </property>
+       <property name="text">
+        <string>no</string>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>8</width>
+         <height>8</height>
+        </size>
+       </property>
       </widget>
-      <widget class="QFrame" name="frame_5">
+      <widget class="QRadioButton" name="radioLoadYes">
        <property name="geometry">
         <rect>
-         <x>300</x>
-         <y>60</y>
-         <width>75</width>
-         <height>31</height>
+         <x>270</x>
+         <y>69</y>
+         <width>41</width>
+         <height>16</height>
         </rect>
        </property>
-       <property name="frameShape">
-        <enum>QFrame::NoFrame</enum>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
        </property>
-       <property name="frameShadow">
-        <enum>QFrame::Raised</enum>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>12</height>
+        </size>
        </property>
-       <property name="lineWidth">
-        <number>1</number>
+       <property name="font">
+        <font>
+         <family>DIN</family>
+        </font>
        </property>
-       <layout class="QVBoxLayout" name="verticalLayout_4">
-        <property name="spacing">
-         <number>0</number>
-        </property>
-        <property name="leftMargin">
-         <number>10</number>
-        </property>
-        <property name="topMargin">
-         <number>0</number>
-        </property>
-        <property name="rightMargin">
-         <number>0</number>
-        </property>
-        <property name="bottomMargin">
-         <number>0</number>
-        </property>
-        <item>
-         <widget class="QRadioButton" name="radioButton_13">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>12</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <family>DIN</family>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QRadioButton {
+       <property name="styleSheet">
+        <string notr="true">QRadioButton {
 	color:  rgb(100,100,100);
 }
 QRadioButton::checked {
@@ -2983,39 +802,45 @@ QRadioButton::indicator::checked {
 	background-color: rgb(255, 124, 112);
 }
 </string>
-          </property>
-          <property name="text">
-           <string>yes</string>
-          </property>
-          <property name="iconSize">
-           <size>
-            <width>8</width>
-            <height>8</height>
-           </size>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QRadioButton" name="radioButton_14">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>12</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <family>DIN</family>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QRadioButton {
+       </property>
+       <property name="text">
+        <string>yes</string>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>8</width>
+         <height>8</height>
+        </size>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="radioSaveNo">
+       <property name="geometry">
+        <rect>
+         <x>330</x>
+         <y>87</y>
+         <width>51</width>
+         <height>12</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>12</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>DIN</family>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QRadioButton {
 	color:  rgb(100,100,100);
 }
 QRadioButton::checked {
@@ -3038,28 +863,142 @@ QRadioButton::indicator::checked {
 	background-color: rgb(255, 124, 112);
 }
 </string>
-          </property>
-          <property name="text">
-           <string>no</string>
-          </property>
-          <property name="iconSize">
-           <size>
-            <width>8</width>
-            <height>8</height>
-           </size>
-          </property>
-         </widget>
-        </item>
-       </layout>
+       </property>
+       <property name="text">
+        <string>no</string>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>8</width>
+         <height>8</height>
+        </size>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="radioSaveYes">
+       <property name="geometry">
+        <rect>
+         <x>330</x>
+         <y>70</y>
+         <width>51</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>12</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>DIN</family>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QRadioButton {
+	color:  rgb(100,100,100);
+}
+QRadioButton::checked {
+	color: rgb(255, 124, 112);
+}
+
+QRadioButton::indicator {
+    width: 7px;
+    height: 7px;
+	color: rgb(255, 124, 112);
+}
+QRadioButton::indicator::unchecked {
+	opacity: 0%;
+}
+
+QRadioButton::indicator::checked {
+    opacity: 100%;
+	color: rgb(255, 124, 112);
+	selection-color: rgb(255, 124, 112);
+	background-color: rgb(255, 124, 112);
+}
+</string>
+       </property>
+       <property name="text">
+        <string>yes</string>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>8</width>
+         <height>8</height>
+        </size>
+       </property>
+      </widget>
+      <widget class="KnobWidget" name="knobVolume">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>28</y>
+         <width>68</width>
+         <height>91</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimum">
+        <number>0</number>
+       </property>
+       <property name="maximum">
+        <number>100</number>
+       </property>
+       <property name="value">
+        <number>50</number>
+       </property>
+       <property name="color" stdset="0">
+        <color>
+         <red>255</red>
+         <green>124</green>
+         <blue>112</blue>
+        </color>
+       </property>
+       <property name="showtext" stdset="0">
+        <bool>true</bool>
+       </property>
+       <property name="unit" stdset="0">
+        <string>%</string>
+       </property>
+       <property name="numdigits" stdset="0">
+        <number>0</number>
+       </property>
+       <property name="label" stdset="0">
+        <string>prognosis</string>
+       </property>
+       <property name="linewidth" stdset="0">
+        <double>5.000000000000000</double>
+       </property>
+       <property name="logarithmic" stdset="0">
+        <bool>false</bool>
+       </property>
+       <property name="valmin" stdset="0">
+        <double>0.000000000000000</double>
+       </property>
+       <property name="valmax" stdset="0">
+        <double>100.000000000000000</double>
+       </property>
       </widget>
      </widget>
     </item>
-    <item row="2" column="2" rowspan="2">
-     <widget class="QGroupBox" name="groupBox_matrix">
+    <item row="1" column="3">
+     <widget class="QGroupBox" name="groupBox_lfo1">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
         <horstretch>1</horstretch>
-        <verstretch>1</verstretch>
+        <verstretch>0</verstretch>
        </sizepolicy>
       </property>
       <property name="font">
@@ -3069,7 +1008,7 @@ QRadioButton::indicator::checked {
       </property>
       <property name="styleSheet">
        <string notr="true">QGroupBox {
-    border: 2px solid rgb(250, 255, 161);
+    border: 2px solid rgb(255,164,94);
     border-radius: 0px;
 	margin-top: 2.5ex;
 }
@@ -3077,12 +1016,1853 @@ QRadioButton::indicator::checked {
 QGroupBox::title {
     /*subcontrol-position: top left; /* position at the top center */
 	color: black;
-	background-color: rgb(250, 255, 161);
+	background-color: rgb(255,164,94);
 }</string>
       </property>
       <property name="title">
-       <string>matrix</string>
+       <string>lfo.1</string>
       </property>
+      <layout class="QGridLayout" name="gridLayout_7">
+       <item row="1" column="1">
+        <widget class="KnobWidget" name="knobLfoShape1">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>10</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimum">
+          <number>0</number>
+         </property>
+         <property name="maximum">
+          <number>4</number>
+         </property>
+         <property name="color" stdset="0">
+          <color>
+           <red>255</red>
+           <green>164</green>
+           <blue>94</blue>
+          </color>
+         </property>
+         <property name="showtext" stdset="0">
+          <bool>true</bool>
+         </property>
+         <property name="unit" stdset="0">
+          <string/>
+         </property>
+         <property name="numdigits" stdset="0">
+          <number>0</number>
+         </property>
+         <property name="label" stdset="0">
+          <string>shape</string>
+         </property>
+         <property name="linewidth" stdset="0">
+          <double>5.000000000000000</double>
+         </property>
+         <property name="logarithmic" stdset="0">
+          <bool>false</bool>
+         </property>
+         <property name="valmin" stdset="0">
+          <double>1.000000000000000</double>
+         </property>
+         <property name="valmax" stdset="0">
+          <double>5.000000000000000</double>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="KnobWidget" name="knobLfoFreq1">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>10</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximum">
+          <number>255</number>
+         </property>
+         <property name="color" stdset="0">
+          <color>
+           <red>255</red>
+           <green>164</green>
+           <blue>94</blue>
+          </color>
+         </property>
+         <property name="showtext" stdset="0">
+          <bool>true</bool>
+         </property>
+         <property name="unit" stdset="0">
+          <string>Hz</string>
+         </property>
+         <property name="numdigits" stdset="0">
+          <number>2</number>
+         </property>
+         <property name="label" stdset="0">
+          <string>frequency</string>
+         </property>
+         <property name="linewidth" stdset="0">
+          <double>5.000000000000000</double>
+         </property>
+         <property name="logarithmic" stdset="0">
+          <bool>true</bool>
+         </property>
+         <property name="valmin" stdset="0">
+          <double>0.020000000000000</double>
+         </property>
+         <property name="valmax" stdset="0">
+          <double>20.000000000000000</double>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0" colspan="2">
+        <widget class="LfoWidget" name="lfoViewer1" native="true">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>15</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(46, 52, 54);</string>
+         </property>
+         <property name="color" stdset="0">
+          <color>
+           <red>255</red>
+           <green>164</green>
+           <blue>94</blue>
+          </color>
+         </property>
+         <property name="linewidth" stdset="0">
+          <double>1.500000000000000</double>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QGroupBox" name="groupBox_midi">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>1</horstretch>
+        <verstretch>3</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>DIN</family>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QGroupBox {
+    border: 2px solid rgb(255, 124, 112);
+    border-radius: 0px;
+	margin-top: 2.5ex;
+}
+
+QGroupBox::title {
+    /*subcontrol-position: top left; /* position at the top center */
+	color: black;
+	background-color: rgb(255, 124, 112)
+;
+}</string>
+      </property>
+      <property name="title">
+       <string>midi</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_8">
+       <item row="1" column="4">
+        <widget class="KnobWidget" name="knobTempo">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimum">
+          <number>10</number>
+         </property>
+         <property name="maximum">
+          <number>300</number>
+         </property>
+         <property name="color" stdset="0">
+          <color>
+           <red>255</red>
+           <green>124</green>
+           <blue>112</blue>
+          </color>
+         </property>
+         <property name="showtext" stdset="0">
+          <bool>true</bool>
+         </property>
+         <property name="unit" stdset="0">
+          <string>bm</string>
+         </property>
+         <property name="numdigits" stdset="0">
+          <number>0</number>
+         </property>
+         <property name="label" stdset="0">
+          <string>tempo</string>
+         </property>
+         <property name="linewidth" stdset="0">
+          <double>5.000000000000000</double>
+         </property>
+         <property name="logarithmic" stdset="0">
+          <bool>true</bool>
+         </property>
+         <property name="valmin" stdset="0">
+          <double>10.000000000000000</double>
+         </property>
+         <property name="valmax" stdset="0">
+          <double>300.000000000000000</double>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="5">
+        <widget class="KnobWidget" name="knobChordMode">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimum">
+          <number>0</number>
+         </property>
+         <property name="maximum">
+          <number>4</number>
+         </property>
+         <property name="value">
+          <number>0</number>
+         </property>
+         <property name="color" stdset="0">
+          <color>
+           <red>255</red>
+           <green>124</green>
+           <blue>112</blue>
+          </color>
+         </property>
+         <property name="showtext" stdset="0">
+          <bool>false</bool>
+         </property>
+         <property name="unit" stdset="0">
+          <string/>
+         </property>
+         <property name="numdigits" stdset="0">
+          <number>0</number>
+         </property>
+         <property name="label" stdset="0">
+          <string>chord</string>
+         </property>
+         <property name="linewidth" stdset="0">
+          <double>5.000000000000000</double>
+         </property>
+         <property name="logarithmic" stdset="0">
+          <bool>true</bool>
+         </property>
+         <property name="valmin" stdset="0">
+          <double>1.000000000000000</double>
+         </property>
+         <property name="valmax" stdset="0">
+          <double>3.000000000000000</double>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="7" rowspan="2">
+        <widget class="QFrame" name="radioChord">
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <property name="lineWidth">
+          <number>1</number>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QRadioButton" name="radioChordOff">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>12</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>DIN</family>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QRadioButton {
+	color:  rgb(100,100,100);
+}
+QRadioButton::checked {
+	color: rgb(255, 124, 112);
+}
+
+QRadioButton::indicator {
+    width: 7px;
+    height: 7px;
+	color: rgb(255, 124, 112);
+}
+QRadioButton::indicator::unchecked {
+	opacity: 0%;
+}
+
+QRadioButton::indicator::checked {
+    opacity: 100%;
+	color: rgb(255, 124, 112);
+	selection-color: rgb(255, 124, 112);
+	background-color: rgb(255, 124, 112);
+}
+</string>
+            </property>
+            <property name="text">
+             <string>chord.off</string>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>8</width>
+              <height>8</height>
+             </size>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="radioChordMinor">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>12</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>DIN</family>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QRadioButton {
+	color:  rgb(100,100,100);
+}
+QRadioButton::checked {
+	color: rgb(255, 124, 112);
+}
+
+QRadioButton::indicator {
+    width: 7px;
+    height: 7px;
+	color: rgb(255, 124, 112);
+}
+QRadioButton::indicator::unchecked {
+	opacity: 0%;
+}
+
+QRadioButton::indicator::checked {
+    opacity: 100%;
+	color: rgb(255, 124, 112);
+	selection-color: rgb(255, 124, 112);
+	background-color: rgb(255, 124, 112);
+}
+</string>
+            </property>
+            <property name="text">
+             <string>chord.minor</string>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>8</width>
+              <height>8</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="radioChordMajor">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>12</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>DIN</family>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QRadioButton {
+	color:  rgb(100,100,100);
+}
+QRadioButton::checked {
+	color: rgb(255, 124, 112);
+}
+
+QRadioButton::indicator {
+    width: 7px;
+    height: 7px;
+	color: rgb(255, 124, 112);
+}
+QRadioButton::indicator::unchecked {
+	opacity: 0%;
+}
+
+QRadioButton::indicator::checked {
+    opacity: 100%;
+	color: rgb(255, 124, 112);
+	selection-color: rgb(255, 124, 112);
+	background-color: rgb(255, 124, 112);
+}
+</string>
+            </property>
+            <property name="text">
+             <string>chord.major</string>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>8</width>
+              <height>8</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="radioChordKey3">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>12</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>DIN</family>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QRadioButton {
+	color:  rgb(100,100,100);
+}
+QRadioButton::checked {
+	color: rgb(255, 124, 112);
+}
+
+QRadioButton::indicator {
+    width: 7px;
+    height: 7px;
+	color: rgb(255, 124, 112);
+}
+QRadioButton::indicator::unchecked {
+	opacity: 0%;
+}
+
+QRadioButton::indicator::checked {
+    opacity: 100%;
+	color: rgb(255, 124, 112);
+	selection-color: rgb(255, 124, 112);
+	background-color: rgb(255, 124, 112);
+}
+</string>
+            </property>
+            <property name="text">
+             <string>chord.key3</string>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>8</width>
+              <height>8</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="radioChordKey4">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>12</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>DIN</family>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QRadioButton {
+	color:  rgb(100,100,100);
+}
+QRadioButton::checked {
+	color: rgb(255, 124, 112);
+}
+
+QRadioButton::indicator {
+    width: 7px;
+    height: 7px;
+	color: rgb(255, 124, 112);
+}
+QRadioButton::indicator::unchecked {
+	opacity: 0%;
+}
+
+QRadioButton::indicator::checked {
+    opacity: 100%;
+	color: rgb(255, 124, 112);
+	selection-color: rgb(255, 124, 112);
+	background-color: rgb(255, 124, 112);
+}
+</string>
+            </property>
+            <property name="text">
+             <string>chord.key4</string>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>8</width>
+              <height>8</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="1" column="2" rowspan="2">
+        <widget class="QFrame" name="radioArp">
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <property name="lineWidth">
+          <number>1</number>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QRadioButton" name="radioArpOff">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>12</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>DIN</family>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QRadioButton {
+	color:  rgb(100,100,100);
+}
+QRadioButton::checked {
+	color: rgb(255, 124, 112);
+}
+
+QRadioButton::indicator {
+    width: 7px;
+    height: 7px;
+	color: rgb(255, 124, 112);
+}
+QRadioButton::indicator::unchecked {
+	opacity: 0%;
+}
+
+QRadioButton::indicator::checked {
+    opacity: 100%;
+	color: rgb(255, 124, 112);
+	selection-color: rgb(255, 124, 112);
+	background-color: rgb(255, 124, 112);
+}
+</string>
+            </property>
+            <property name="text">
+             <string>arp.off</string>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>8</width>
+              <height>8</height>
+             </size>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="radioArpUp">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>12</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>DIN</family>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QRadioButton {
+	color:  rgb(100,100,100);
+}
+QRadioButton::checked {
+	color: rgb(255, 124, 112);
+}
+
+QRadioButton::indicator {
+    width: 7px;
+    height: 7px;
+	color: rgb(255, 124, 112);
+}
+QRadioButton::indicator::unchecked {
+	opacity: 0%;
+}
+
+QRadioButton::indicator::checked {
+    opacity: 100%;
+	color: rgb(255, 124, 112);
+	selection-color: rgb(255, 124, 112);
+	background-color: rgb(255, 124, 112);
+}
+</string>
+            </property>
+            <property name="text">
+             <string>arp.up</string>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>8</width>
+              <height>8</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="radioArpDown">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>12</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>DIN</family>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QRadioButton {
+	color:  rgb(100,100,100);
+}
+QRadioButton::checked {
+	color: rgb(255, 124, 112);
+}
+
+QRadioButton::indicator {
+    width: 7px;
+    height: 7px;
+	color: rgb(255, 124, 112);
+}
+QRadioButton::indicator::unchecked {
+	opacity: 0%;
+}
+
+QRadioButton::indicator::checked {
+    opacity: 100%;
+	color: rgb(255, 124, 112);
+	selection-color: rgb(255, 124, 112);
+	background-color: rgb(255, 124, 112);
+}
+</string>
+            </property>
+            <property name="text">
+             <string>arp.down</string>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>8</width>
+              <height>8</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="radioArpUpdown">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>12</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>DIN</family>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QRadioButton {
+	color:  rgb(100,100,100);
+}
+QRadioButton::checked {
+	color: rgb(255, 124, 112);
+}
+
+QRadioButton::indicator {
+    width: 7px;
+    height: 7px;
+	color: rgb(255, 124, 112);
+}
+QRadioButton::indicator::unchecked {
+	opacity: 0%;
+}
+
+QRadioButton::indicator::checked {
+    opacity: 100%;
+	color: rgb(255, 124, 112);
+	selection-color: rgb(255, 124, 112);
+	background-color: rgb(255, 124, 112);
+}
+</string>
+            </property>
+            <property name="text">
+             <string>arp.updn</string>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>8</width>
+              <height>8</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="radioArpRand">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>12</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>DIN</family>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QRadioButton {
+	color:  rgb(100,100,100);
+}
+QRadioButton::checked {
+	color: rgb(255, 124, 112);
+}
+
+QRadioButton::indicator {
+    width: 7px;
+    height: 7px;
+	color: rgb(255, 124, 112);
+}
+QRadioButton::indicator::unchecked {
+	opacity: 0%;
+}
+
+QRadioButton::indicator::checked {
+    opacity: 100%;
+	color: rgb(255, 124, 112);
+	selection-color: rgb(255, 124, 112);
+	background-color: rgb(255, 124, 112);
+}
+</string>
+            </property>
+            <property name="text">
+             <string>arp.rand</string>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>8</width>
+              <height>8</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="1" column="3">
+        <widget class="KnobWidget" name="knobArpMode">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimum">
+          <number>0</number>
+         </property>
+         <property name="maximum">
+          <number>4</number>
+         </property>
+         <property name="value">
+          <number>0</number>
+         </property>
+         <property name="color" stdset="0">
+          <color>
+           <red>255</red>
+           <green>124</green>
+           <blue>112</blue>
+          </color>
+         </property>
+         <property name="showtext" stdset="0">
+          <bool>false</bool>
+         </property>
+         <property name="unit" stdset="0">
+          <string/>
+         </property>
+         <property name="numdigits" stdset="0">
+          <number>0</number>
+         </property>
+         <property name="label" stdset="0">
+          <string>arp</string>
+         </property>
+         <property name="linewidth" stdset="0">
+          <double>5.000000000000000</double>
+         </property>
+         <property name="logarithmic" stdset="0">
+          <bool>true</bool>
+         </property>
+         <property name="valmin" stdset="0">
+          <double>1.000000000000000</double>
+         </property>
+         <property name="valmax" stdset="0">
+          <double>3.000000000000000</double>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="6">
+        <spacer name="horizontalSpacer_3">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="0" column="3">
+     <widget class="QGroupBox" name="groupBox_lfo0">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>1</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>DIN</family>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QGroupBox {
+    border: 2px solid rgb(255,164,94);
+    border-radius: 0px;
+	margin-top: 2.5ex;
+}
+
+QGroupBox::title {
+    /*subcontrol-position: top left; /* position at the top center */
+	color: black;
+	background-color: rgb(255,164,94);
+}</string>
+      </property>
+      <property name="title">
+       <string>lfo.0</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_6">
+       <item row="0" column="0" colspan="2">
+        <widget class="LfoWidget" name="lfoViewer0" native="true">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>15</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(46, 52, 54);</string>
+         </property>
+         <property name="color" stdset="0">
+          <color>
+           <red>255</red>
+           <green>164</green>
+           <blue>94</blue>
+          </color>
+         </property>
+         <property name="linewidth" stdset="0">
+          <double>1.500000000000000</double>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="KnobWidget" name="knobLfoFreq0">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>10</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximum">
+          <number>255</number>
+         </property>
+         <property name="color" stdset="0">
+          <color>
+           <red>255</red>
+           <green>164</green>
+           <blue>94</blue>
+          </color>
+         </property>
+         <property name="showtext" stdset="0">
+          <bool>true</bool>
+         </property>
+         <property name="unit" stdset="0">
+          <string>Hz</string>
+         </property>
+         <property name="numdigits" stdset="0">
+          <number>2</number>
+         </property>
+         <property name="label" stdset="0">
+          <string>frequency</string>
+         </property>
+         <property name="linewidth" stdset="0">
+          <double>5.000000000000000</double>
+         </property>
+         <property name="logarithmic" stdset="0">
+          <bool>true</bool>
+         </property>
+         <property name="valmin" stdset="0">
+          <double>0.020000000000000</double>
+         </property>
+         <property name="valmax" stdset="0">
+          <double>20.000000000000000</double>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="KnobWidget" name="knobLfoShape0">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>10</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimum">
+          <number>0</number>
+         </property>
+         <property name="maximum">
+          <number>4</number>
+         </property>
+         <property name="color" stdset="0">
+          <color>
+           <red>255</red>
+           <green>164</green>
+           <blue>94</blue>
+          </color>
+         </property>
+         <property name="showtext" stdset="0">
+          <bool>true</bool>
+         </property>
+         <property name="unit" stdset="0">
+          <string/>
+         </property>
+         <property name="numdigits" stdset="0">
+          <number>0</number>
+         </property>
+         <property name="label" stdset="0">
+          <string>shape</string>
+         </property>
+         <property name="linewidth" stdset="0">
+          <double>5.000000000000000</double>
+         </property>
+         <property name="logarithmic" stdset="0">
+          <bool>false</bool>
+         </property>
+         <property name="valmin" stdset="0">
+          <double>1.000000000000000</double>
+         </property>
+         <property name="valmax" stdset="0">
+          <double>5.000000000000000</double>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="2" column="3" rowspan="2">
+     <widget class="QGroupBox" name="groupBox_voice">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>1</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>DIN</family>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QGroupBox {
+    border: 2px solid rgb(221, 148, 255);
+    border-radius: 0px;
+	margin-top: 2.5ex;
+}
+
+QGroupBox::title {
+    /*subcontrol-position: top left; /* position at the top center */
+	color: black;
+	background-color: rgb(221, 148, 255);
+}</string>
+      </property>
+      <property name="title">
+       <string>voice</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_9">
+       <item row="1" column="0">
+        <widget class="KnobWidget" name="knobTimbre">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimum">
+          <number>1</number>
+         </property>
+         <property name="maximum">
+          <number>4</number>
+         </property>
+         <property name="color" stdset="0">
+          <color>
+           <red>221</red>
+           <green>148</green>
+           <blue>255</blue>
+          </color>
+         </property>
+         <property name="showtext" stdset="0">
+          <bool>false</bool>
+         </property>
+         <property name="unit" stdset="0">
+          <string/>
+         </property>
+         <property name="numdigits" stdset="0">
+          <number>0</number>
+         </property>
+         <property name="label" stdset="0">
+          <string>timbre</string>
+         </property>
+         <property name="linewidth" stdset="0">
+          <double>5.000000000000000</double>
+         </property>
+         <property name="logarithmic" stdset="0">
+          <bool>false</bool>
+         </property>
+         <property name="valmin" stdset="0">
+          <double>1.000000000000000</double>
+         </property>
+         <property name="valmax" stdset="0">
+          <double>4.000000000000000</double>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="KnobWidget" name="knobVoice">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimum">
+          <number>1</number>
+         </property>
+         <property name="maximum">
+          <number>4</number>
+         </property>
+         <property name="color" stdset="0">
+          <color>
+           <red>221</red>
+           <green>148</green>
+           <blue>255</blue>
+          </color>
+         </property>
+         <property name="showtext" stdset="0">
+          <bool>false</bool>
+         </property>
+         <property name="unit" stdset="0">
+          <string/>
+         </property>
+         <property name="numdigits" stdset="0">
+          <number>0</number>
+         </property>
+         <property name="label" stdset="0">
+          <string>voice</string>
+         </property>
+         <property name="linewidth" stdset="0">
+          <double>5.000000000000000</double>
+         </property>
+         <property name="logarithmic" stdset="0">
+          <bool>false</bool>
+         </property>
+         <property name="valmin" stdset="0">
+          <double>1.000000000000000</double>
+         </property>
+         <property name="valmax" stdset="0">
+          <double>4.000000000000000</double>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="2">
+        <widget class="KnobWidget" name="knobTimbreSelect">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximum">
+          <number>1</number>
+         </property>
+         <property name="color" stdset="0">
+          <color>
+           <red>221</red>
+           <green>148</green>
+           <blue>255</blue>
+          </color>
+         </property>
+         <property name="showtext" stdset="0">
+          <bool>true</bool>
+         </property>
+         <property name="unit" stdset="0">
+          <string/>
+         </property>
+         <property name="numdigits" stdset="0">
+          <number>0</number>
+         </property>
+         <property name="label" stdset="0">
+          <string>timbre select</string>
+         </property>
+         <property name="linewidth" stdset="0">
+          <double>5.000000000000000</double>
+         </property>
+         <property name="logarithmic" stdset="0">
+          <bool>false</bool>
+         </property>
+         <property name="valmin" stdset="0">
+          <double>0.000000000000000</double>
+         </property>
+         <property name="valmax" stdset="0">
+          <double>1.000000000000000</double>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="KnobWidget" name="knobChorus">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximum">
+          <number>4</number>
+         </property>
+         <property name="singleStep">
+          <number>1</number>
+         </property>
+         <property name="color" stdset="0">
+          <color>
+           <red>221</red>
+           <green>148</green>
+           <blue>255</blue>
+          </color>
+         </property>
+         <property name="showtext" stdset="0">
+          <bool>true</bool>
+         </property>
+         <property name="unit" stdset="0">
+          <string/>
+         </property>
+         <property name="numdigits" stdset="0">
+          <number>0</number>
+         </property>
+         <property name="label" stdset="0">
+          <string>chorus</string>
+         </property>
+         <property name="linewidth" stdset="0">
+          <double>5.000000000000000</double>
+         </property>
+         <property name="logarithmic" stdset="0">
+          <bool>false</bool>
+         </property>
+         <property name="valmin" stdset="0">
+          <double>0.000000000000000</double>
+         </property>
+         <property name="valmax" stdset="0">
+          <double>4.000000000000000</double>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="KnobWidget" name="knobGlide">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximum">
+          <number>255</number>
+         </property>
+         <property name="color" stdset="0">
+          <color>
+           <red>221</red>
+           <green>148</green>
+           <blue>255</blue>
+          </color>
+         </property>
+         <property name="showtext" stdset="0">
+          <bool>true</bool>
+         </property>
+         <property name="unit" stdset="0">
+          <string>s</string>
+         </property>
+         <property name="numdigits" stdset="0">
+          <number>2</number>
+         </property>
+         <property name="label" stdset="0">
+          <string>glide</string>
+         </property>
+         <property name="linewidth" stdset="0">
+          <double>5.000000000000000</double>
+         </property>
+         <property name="logarithmic" stdset="0">
+          <bool>true</bool>
+         </property>
+         <property name="valmin" stdset="0">
+          <double>0.010000000000000</double>
+         </property>
+         <property name="valmax" stdset="0">
+          <double>2.000000000000000</double>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1" colspan="2">
+        <widget class="QFrame" name="radioTimbre">
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <property name="lineWidth">
+          <number>1</number>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_6">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <property name="leftMargin">
+           <number>5</number>
+          </property>
+          <property name="topMargin">
+           <number>5</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QRadioButton" name="radioTimbreSingle">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>12</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>DIN</family>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QRadioButton {
+	color:  rgb(100,100,100);
+}
+QRadioButton::checked {
+	color: rgb(221, 148, 255);
+}
+
+QRadioButton::indicator {
+    width: 7px;
+    height: 7px;
+	color: rgb(221, 148, 255);
+}
+QRadioButton::indicator::unchecked {
+	opacity: 0%;
+}
+
+QRadioButton::indicator::checked {
+    opacity: 100%;
+	color: rgb(221, 148, 255);
+	selection-color: rgb(221, 148, 255);
+	background-color: rgb(221, 148, 255);
+}
+</string>
+            </property>
+            <property name="text">
+             <string>timbre.single</string>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>8</width>
+              <height>8</height>
+             </size>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="radioTimbreStereo">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>12</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>DIN</family>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QRadioButton {
+	color:  rgb(100,100,100);
+}
+QRadioButton::checked {
+	color: rgb(221, 148, 255);
+}
+
+QRadioButton::indicator {
+    width: 7px;
+    height: 7px;
+	color: rgb(221, 148, 255);
+}
+QRadioButton::indicator::unchecked {
+	opacity: 0%;
+}
+
+QRadioButton::indicator::checked {
+    opacity: 100%;
+	color: rgb(221, 148, 255);
+	selection-color: rgb(221, 148, 255);
+	background-color: rgb(221, 148, 255);
+}
+</string>
+            </property>
+            <property name="text">
+             <string>timbre.stereo</string>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>8</width>
+              <height>8</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="radioTimbreDual">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>12</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>DIN</family>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QRadioButton {
+	color:  rgb(100,100,100);
+}
+QRadioButton::checked {
+	color: rgb(221, 148, 255);
+}
+
+QRadioButton::indicator {
+    width: 7px;
+    height: 7px;
+	color: rgb(221, 148, 255);
+}
+QRadioButton::indicator::unchecked {
+	opacity: 0%;
+}
+
+QRadioButton::indicator::checked {
+    opacity: 100%;
+	color: rgb(221, 148, 255);
+	selection-color: rgb(221, 148, 255);
+	background-color: rgb(221, 148, 255);
+}
+</string>
+            </property>
+            <property name="text">
+             <string>timbre.dual</string>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>8</width>
+              <height>8</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="radioTimbreSplit">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>12</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>DIN</family>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QRadioButton {
+	color:  rgb(100,100,100);
+}
+QRadioButton::checked {
+	color: rgb(221, 148, 255);
+}
+
+QRadioButton::indicator {
+    width: 7px;
+    height: 7px;
+	color: rgb(221, 148, 255);
+}
+QRadioButton::indicator::unchecked {
+	opacity: 0%;
+}
+
+QRadioButton::indicator::checked {
+    opacity: 100%;
+	color: rgb(221, 148, 255);
+	selection-color: rgb(221, 148, 255);
+	background-color: rgb(221, 148, 255);
+}
+</string>
+            </property>
+            <property name="text">
+             <string>timbre.split</string>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>8</width>
+              <height>8</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="0" column="1" colspan="2">
+        <widget class="QFrame" name="radioVoice">
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <property name="lineWidth">
+          <number>1</number>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_5">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <property name="leftMargin">
+           <number>5</number>
+          </property>
+          <property name="topMargin">
+           <number>5</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QRadioButton" name="radioVoiceSingle">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>12</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>DIN</family>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QRadioButton {
+	color:  rgb(100,100,100);
+}
+QRadioButton::checked {
+	color: rgb(221, 148, 255);
+}
+
+QRadioButton::indicator {
+    width: 7px;
+    height: 7px;
+	color: rgb(221, 148, 255);
+}
+QRadioButton::indicator::unchecked {
+	opacity: 0%;
+}
+
+QRadioButton::indicator::checked {
+    opacity: 100%;
+	color: rgb(221, 148, 255);
+	selection-color: rgb(221, 148, 255);
+	background-color: rgb(221, 148, 255);
+}
+</string>
+            </property>
+            <property name="text">
+             <string>voice.single</string>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>8</width>
+              <height>8</height>
+             </size>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="radioVoiceMono">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>12</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>DIN</family>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QRadioButton {
+	color:  rgb(100,100,100);
+}
+QRadioButton::checked {
+	color: rgb(221, 148, 255);
+}
+
+QRadioButton::indicator {
+    width: 7px;
+    height: 7px;
+	color: rgb(221, 148, 255);
+}
+QRadioButton::indicator::unchecked {
+	opacity: 0%;
+}
+
+QRadioButton::indicator::checked {
+    opacity: 100%;
+	color: rgb(221, 148, 255);
+	selection-color: rgb(221, 148, 255);
+	background-color: rgb(221, 148, 255);
+}
+</string>
+            </property>
+            <property name="text">
+             <string>voice.mono</string>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>8</width>
+              <height>8</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="radioVoicePara">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>12</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>DIN</family>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QRadioButton {
+	color:  rgb(100,100,100);
+}
+QRadioButton::checked {
+	color: rgb(221, 148, 255);
+}
+
+QRadioButton::indicator {
+    width: 7px;
+    height: 7px;
+	color: rgb(221, 148, 255);
+}
+QRadioButton::indicator::unchecked {
+	opacity: 0%;
+}
+
+QRadioButton::indicator::checked {
+    opacity: 100%;
+	color: rgb(221, 148, 255);
+	selection-color: rgb(221, 148, 255);
+	background-color: rgb(221, 148, 255);
+}
+</string>
+            </property>
+            <property name="text">
+             <string>voice.para</string>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>8</width>
+              <height>8</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="radioVoiceDuo">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>12</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>DIN</family>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QRadioButton {
+	color:  rgb(100,100,100);
+}
+QRadioButton::checked {
+	color: rgb(221, 148, 255);
+}
+
+QRadioButton::indicator {
+    width: 7px;
+    height: 7px;
+	color: rgb(221, 148, 255);
+}
+QRadioButton::indicator::unchecked {
+	opacity: 0%;
+}
+
+QRadioButton::indicator::checked {
+    opacity: 100%;
+	color: rgb(221, 148, 255);
+	selection-color: rgb(221, 148, 255);
+	background-color: rgb(221, 148, 255);
+}
+</string>
+            </property>
+            <property name="text">
+             <string>voice.duo</string>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>8</width>
+              <height>8</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
      </widget>
     </item>
     <item row="0" column="2">
@@ -3116,7 +2896,7 @@ QGroupBox::title {
       </property>
       <layout class="QGridLayout" name="gridLayout_5">
        <item row="2" column="0">
-        <widget class="KnobWidget" name="knobCutoff_7">
+        <widget class="KnobWidget" name="knobDetune">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
            <horstretch>0</horstretch>
@@ -3163,7 +2943,7 @@ QGroupBox::title {
         </widget>
        </item>
        <item row="1" column="0">
-        <widget class="KnobWidget" name="knobCutoff_4">
+        <widget class="KnobWidget" name="knobMix0">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
            <horstretch>0</horstretch>
@@ -3290,7 +3070,7 @@ QGroupBox::title {
         </widget>
        </item>
        <item row="1" column="1">
-        <widget class="KnobWidget" name="knobCutoff_5">
+        <widget class="KnobWidget" name="knobMix1">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
            <horstretch>0</horstretch>
@@ -3381,7 +3161,7 @@ QGroupBox::title {
         </widget>
        </item>
        <item row="2" column="1">
-        <widget class="KnobWidget" name="knobCutoff_6">
+        <widget class="KnobWidget" name="knobOctave">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
            <horstretch>1</horstretch>
@@ -3428,6 +3208,297 @@ QGroupBox::title {
         </widget>
        </item>
       </layout>
+     </widget>
+    </item>
+    <item row="0" column="4">
+     <spacer name="horizontalSpacer_2">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeType">
+       <enum>QSizePolicy::Fixed</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>10</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="0" column="1">
+     <widget class="QGroupBox" name="groupBox_ampenv">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>2</horstretch>
+        <verstretch>6</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>DIN</family>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QGroupBox {
+    border: 2px solid rgb(166, 255, 208);
+    border-radius: 0px;
+	margin-top: 2.5ex;
+}
+
+QGroupBox::title {
+    /*subcontrol-position: top left; /* position at the top center */
+	color: black;
+	background-color: rgb(166, 255, 208);
+}</string>
+      </property>
+      <property name="title">
+       <string>amplifier.envelope</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_4">
+       <item row="1" column="2">
+        <widget class="KnobWidget" name="ampKnobSustain">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximum">
+          <number>255</number>
+         </property>
+         <property name="color" stdset="0">
+          <color>
+           <red>166</red>
+           <green>255</green>
+           <blue>208</blue>
+          </color>
+         </property>
+         <property name="showtext" stdset="0">
+          <bool>true</bool>
+         </property>
+         <property name="unit" stdset="0">
+          <string>%</string>
+         </property>
+         <property name="numdigits" stdset="0">
+          <number>0</number>
+         </property>
+         <property name="label" stdset="0">
+          <string>sustain</string>
+         </property>
+         <property name="linewidth" stdset="0">
+          <double>5.000000000000000</double>
+         </property>
+         <property name="logarithmic" stdset="0">
+          <bool>false</bool>
+         </property>
+         <property name="valmin" stdset="0">
+          <double>0.000000000000000</double>
+         </property>
+         <property name="valmax" stdset="0">
+          <double>100.000000000000000</double>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="KnobWidget" name="ampKnobDecay">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximum">
+          <number>255</number>
+         </property>
+         <property name="color" stdset="0">
+          <color>
+           <red>166</red>
+           <green>255</green>
+           <blue>208</blue>
+          </color>
+         </property>
+         <property name="showtext" stdset="0">
+          <bool>true</bool>
+         </property>
+         <property name="unit" stdset="0">
+          <string>s</string>
+         </property>
+         <property name="numdigits" stdset="0">
+          <number>2</number>
+         </property>
+         <property name="label" stdset="0">
+          <string>decay</string>
+         </property>
+         <property name="linewidth" stdset="0">
+          <double>5.000000000000000</double>
+         </property>
+         <property name="logarithmic" stdset="0">
+          <bool>true</bool>
+         </property>
+         <property name="valmin" stdset="0">
+          <double>0.010000000000000</double>
+         </property>
+         <property name="valmax" stdset="0">
+          <double>10.000000000000000</double>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="KnobWidget" name="ampKnobAttack">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximum">
+          <number>255</number>
+         </property>
+         <property name="color" stdset="0">
+          <color>
+           <red>166</red>
+           <green>255</green>
+           <blue>208</blue>
+          </color>
+         </property>
+         <property name="showtext" stdset="0">
+          <bool>true</bool>
+         </property>
+         <property name="unit" stdset="0">
+          <string>s</string>
+         </property>
+         <property name="numdigits" stdset="0">
+          <number>2</number>
+         </property>
+         <property name="label" stdset="0">
+          <string>attack</string>
+         </property>
+         <property name="linewidth" stdset="0">
+          <double>5.000000000000000</double>
+         </property>
+         <property name="logarithmic" stdset="0">
+          <bool>true</bool>
+         </property>
+         <property name="valmin" stdset="0">
+          <double>0.010000000000000</double>
+         </property>
+         <property name="valmax" stdset="0">
+          <double>10.000000000000000</double>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="3">
+        <widget class="KnobWidget" name="ampKnobRelease">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>10</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximum">
+          <number>255</number>
+         </property>
+         <property name="color" stdset="0">
+          <color>
+           <red>166</red>
+           <green>255</green>
+           <blue>208</blue>
+          </color>
+         </property>
+         <property name="showtext" stdset="0">
+          <bool>true</bool>
+         </property>
+         <property name="unit" stdset="0">
+          <string>s</string>
+         </property>
+         <property name="numdigits" stdset="0">
+          <number>2</number>
+         </property>
+         <property name="label" stdset="0">
+          <string>release</string>
+         </property>
+         <property name="linewidth" stdset="0">
+          <double>5.000000000000000</double>
+         </property>
+         <property name="logarithmic" stdset="0">
+          <bool>true</bool>
+         </property>
+         <property name="valmin" stdset="0">
+          <double>0.010000000000000</double>
+         </property>
+         <property name="valmax" stdset="0">
+          <double>100.000000000000000</double>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0" colspan="4">
+        <widget class="EnvelopeWidget" name="ampEnvViewer" native="true">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>15</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(46, 52, 54);</string>
+         </property>
+         <property name="linewidth" stdset="0">
+          <double>1.500000000000000</double>
+         </property>
+         <property name="color" stdset="0">
+          <color>
+           <red>166</red>
+           <green>255</green>
+           <blue>208</blue>
+          </color>
+         </property>
+         <property name="knobattack" stdset="0">
+          <string notr="true">ampKnobAttack</string>
+         </property>
+         <property name="knobdecay" stdset="0">
+          <string notr="true">ampKnobDecay</string>
+         </property>
+         <property name="knobsustain" stdset="0">
+          <string notr="true">ampKnobSustain</string>
+         </property>
+         <property name="knobrelease" stdset="0">
+          <string notr="true">ampKnobRelease</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="2" column="2" rowspan="2">
+     <widget class="QGroupBox" name="groupBox_matrix">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>1</horstretch>
+        <verstretch>1</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>DIN</family>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QGroupBox {
+    border: 2px solid rgb(250, 255, 161);
+    border-radius: 0px;
+	margin-top: 2.5ex;
+}
+
+QGroupBox::title {
+    /*subcontrol-position: top left; /* position at the top center */
+	color: black;
+	background-color: rgb(250, 255, 161);
+}</string>
+      </property>
+      <property name="title">
+       <string>matrix</string>
+      </property>
      </widget>
     </item>
    </layout>

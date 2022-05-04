@@ -11,7 +11,7 @@ KnobWidget::KnobWidget(QWidget *parent)
 
 void KnobWidget::setRealValue(double value) {
     if (_logarithmic) {
-        assert(fabs(_valmin) > 0.0001);
+//        assert(fabs(_valmin) > 0.0001);
         setValue(log(value/_valmin)/log(_valmax/_valmin)*(maximum()-minimum())+minimum());
     } else {
         setValue((value - _valmin)/(_valmax-_valmin) * (maximum() - minimum()) + minimum());
@@ -22,7 +22,7 @@ void KnobWidget::setRealValue(double value) {
 
 double KnobWidget::realValue() {
     if (_logarithmic) {
-        assert(fabs(_valmin) > 0.0001);
+//        assert(fabs(_valmin) > 0.0001);
         return pow(_valmax/_valmin, (double(value())-minimum())/(maximum()-minimum()))*_valmin;
     } else {
         return double(value() - minimum())/(maximum()-minimum()) * (_valmax - _valmin) + _valmin;

@@ -60,6 +60,22 @@ public:
         NUM_MOD_SOURCES
     };
 
+    enum ArpMode {
+        ARP_OFF,
+        ARP_UP,
+        ARP_DOWN,
+        ARP_UPDOWN,
+        ARP_RAND,
+    };
+
+    enum ChordMode {
+        CHORD_OFF,
+        CHORD_MAJOR,
+        CHORD_MINOR,
+        CHORD_KEY3,
+        CHORD_KEY4
+    };
+
     struct TimbreData {
         // Oscillators:
         double osc_shape0;
@@ -93,18 +109,23 @@ public:
     };
 
     struct PatchData {
-        // Timbres
+        // Voicing
         TimbreData timbre[2];
-
-        //
         VoiceMode voice_mode;
+        TimbreMode timbre_mode;
+
+        // Midi
+        ArpMode midi_arp_mode;
+        int midi_arp_steps;
+        ChordMode midi_chord_mode;
+        int midi_key;
 
         // LFO 0
-        float lfo0_freq;
+        double lfo0_freq;
         LfoShape lfo0_shape;
 
         // LFO 1
-        float lfo1_freq;
+        double lfo1_freq;
         LfoShape lfo1_shape;
 
         // Mod Matrix
@@ -118,12 +139,19 @@ public slots:
     void load(uint16_t idx);
 
     void updateVoiceMode(int m) {_p.voice_mode = VoiceMode(m); _onChange();};
+    void updateTimbreMode(int m) {_p.timbre_mode = TimbreMode(m); _onChange();}
+    void updateTimbre(int i) {_activeTimbre = i; _onChange();};
+
+    void updateArpMode(int m) {_p.midi_arp_mode = ArpMode(m); _onChange();};
+    void updateArpSteps(int m) {_p.midi_arp_steps = m; _onChange();};
+    void updateChordMode(int m) {_p.midi_chord_mode = ChordMode(m); _onChange();};
+    void updateKey(int m) {_p.midi_key = m; _onChange();};
+
     void updateLfoFreq0(double f) {_p.lfo0_freq = f; _onChange();};
     void updateLfoFreq1(double f) {_p.lfo1_freq = f; _onChange();};
     void updateLfoShape0(int s) {_p.lfo0_shape = LfoShape(s); _onChange();};
     void updateLfoShape1(int s) {_p.lfo1_shape = LfoShape(s); _onChange();};
 
-    void toggleActiveTimbre() {_activeTimbre = !_activeTimbre; _onChange();};
 
     void updateOscShape0(double s) {_p.timbre[_activeTimbre].osc_shape0 = s; _onChange();};
     void updateOscShape1(double s) {_p.timbre[_activeTimbre].osc_shape1 = s; _onChange();};
