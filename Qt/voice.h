@@ -16,7 +16,7 @@ public:
     void add_note(int note, int velocity);
     Envelope::GateStatus gate_status();
     void release_note(int note);
-    uint32_t age_ms();
+    qint64 age_ms();
 
 signals:
 

@@ -17,7 +17,11 @@ SOURCES += \
     patch.cpp \
     pseudovoice.cpp \
     synthesizer.cpp \
-    voice.cpp
+    voice.cpp \
+    widgets/envelopewidget.cpp \
+    widgets/filterwidget.cpp \
+    widgets/knobwidget.cpp \
+    widgets/oscillatorwidget.cpp
 
 HEADERS += \
     envelope.h \
@@ -27,7 +31,11 @@ HEADERS += \
     pseudovoice.h \
     synth_util.h \
     synthesizer.h \
-    voice.h
+    voice.h \
+    widgets/envelopewidget.h \
+    widgets/filterwidget.h \
+    widgets/knobwidget.h \
+    widgets/oscillatorwidget.h
 
 FORMS += \
     mainwindow.ui

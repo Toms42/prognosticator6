@@ -5,3 +5,7 @@ Envelope::Envelope(QObject *parent)
 {
 
 }
+
+void Envelope::setADSR(double A, double D, double S, double R) {
+
+}

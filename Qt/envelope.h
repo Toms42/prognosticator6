@@ -19,6 +19,7 @@ public:
     double getVal();
     double reset();
     double finished();
+    GateStatus gateStatus();
 
 public slots:
     void setADSR(double A, double D, double S, double R);

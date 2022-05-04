@@ -6,3 +6,6 @@ PseudoVoice::PseudoVoice(QObject *parent)
 
 }
 
+Envelope::GateStatus PseudoVoice::gateStatus() {
+    return Envelope::GATE_OFF;
+}
