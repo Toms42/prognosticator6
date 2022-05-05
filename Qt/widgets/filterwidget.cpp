@@ -53,7 +53,7 @@ void FilterWidget::paintEvent(QPaintEvent *) {
             path1.lineTo(x,y1);
     }
 
-    auto painter = QPainter(this);
+    QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing);
     _pen.setWidthF(_linewidth);
     _pen.setColor(QColor(100, 100, 100));

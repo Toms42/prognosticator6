@@ -3,7 +3,8 @@ QT       += core gui
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 include(ext/QMidi/src/QMidi.pri)
 
-CONFIG += c++17
+CONFIG += c++11
+#QMAKE_CXXFLAGS += -march=armv7-a
 
 # You can make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.

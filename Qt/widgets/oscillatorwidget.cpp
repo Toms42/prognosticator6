@@ -38,13 +38,14 @@ inline double sampleOscillator(double t, double shape) {
         interp = (shape - 2./3.) * 3;
         s = interp*sampleSquare(t) + (1-interp)*sampleSaw(t);
     }
+    return s;
 }
 
 void OscillatorWidget::paintEvent(QPaintEvent *) {
     int w = width();
     int h = height();
 
-    auto painter = QPainter(this);
+    QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing);
     QPen pen;
     pen.setWidthF(_linewidth);

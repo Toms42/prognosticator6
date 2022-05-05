@@ -58,7 +58,7 @@ void LfoWidget::paintEvent(QPaintEvent *) {
     int w = width();
     int h = height();
 
-    auto painter = QPainter(this);
+    QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing);
     QPen pen;
     pen.setWidthF(_linewidth);

@@ -47,7 +47,7 @@ void KnobWidget::paintEvent(QPaintEvent *pe) {
     painter.setRenderHint(QPainter::Antialiasing);
 
     QFont font = painter.font();
-    font.setPointSize(10); // TODO: property
+    font.setPointSize(9); // TODO: property
     painter.setFont(font);
     QPen pen;
     pen.setWidth(_linewidth);
@@ -55,11 +55,11 @@ void KnobWidget::paintEvent(QPaintEvent *pe) {
     painter.setPen(pen);
 
     if (_label.length() > 0) {
-        QRect bbox = QRect(0, h/2-(hdial/2)-18, w, 14);
+        QRect bbox = QRect(0, h/2-(hdial/2)-20, w, 16);
         painter.drawText(bbox,Qt::AlignCenter, _label);
     }
     if (_showtext) {
-        QRect bbox = QRect(0, h/2+(hdial/2)+4, w, 14);
+        QRect bbox = QRect(0, h/2+(hdial/2)+2, w, 16);
         QString content = QString::number(realValue(), 'f', _numdigits) + _unit;
         painter.drawText(bbox, Qt::AlignCenter, content);
     }

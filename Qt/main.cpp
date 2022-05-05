@@ -11,6 +11,7 @@
 
 #include <QTimer>
 #include <QThread>
+#include <QFontDatabase>
 
 #define SHOWDEBUGWINDOW
 
@@ -18,19 +19,26 @@ int main(int argc, char *argv[])
 {
     QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     QApplication a(argc, argv);
+
+//    QFontDatabase::addApplicationFont(":/fonts/comic.ttf");
+//    QFontDatabase::addApplicationFont(":/fonts/DIN-Regular.ttf");
+
+//    QFont brown_pro_font("comic");
+//    brown_pro_font.setHintingPreference(QFont::HintingPreference::PreferNoHinting); //This line did the trick
+//    QApplication::setFont(brown_pro_font);
+
     MainWindow w;
     DebugWindow wd;
-    w.show();
-
 #ifdef SHOWDEBUGWINDOW
     wd.show();
 #endif
+    w.show();
 
     ////////////////////
     // Establish MIDI //
     ////////////////////
 
-    auto midi = QMidiIn();
+    QMidiIn midi;
     QMap<QString,QString> midi_devices = midi.devices();
 
     //filter out "midi through" devices:
@@ -59,10 +67,10 @@ int main(int argc, char *argv[])
     // Setup Synth //
     /////////////////
 
-    auto synth = Synthesizer();
+    Synthesizer synth;
     QObject::connect(&midi, &QMidiIn::midiEvent, &synth, &Synthesizer::midiEvent);
 
-    auto patch = Patch(QDir(QDir::home().absolutePath() + QString("/.prog-patches/")));
+    Patch patch(QDir(QDir::home().absolutePath() + QString("/.prog-patches/")));
     w.connectToPatch(&patch);
     wd.connectToPatch(&patch);
 

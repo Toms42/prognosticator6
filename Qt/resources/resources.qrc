@@ -5,6 +5,7 @@
         <file>DIN-Light.ttf</file>
         <file>DIN-Medium.ttf</file>
         <file>DIN-Regular.ttf</file>
+        <file>comic.ttf</file>
     </qresource>
     <qresource prefix="/"/>
 </RCC>

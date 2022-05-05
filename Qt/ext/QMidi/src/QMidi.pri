@@ -1,5 +1,7 @@
 # QMidi include file for QMake
-CONFIG += c++11
+#CONFIG += c++11
+#QMAKE_CXXFLAGS += -march=armv7-a
+#QMAKE_CXXFLAGS += -std=c++11
 
 INCLUDEPATH += $$PWD
 SOURCES += $$PWD/QMidiOut.cpp \
