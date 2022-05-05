@@ -33,16 +33,20 @@ void FilterWidget::paintEvent(QPaintEvent *) {
     int w = width();
     int h = height();
 
+    float xco = f_to_x(_freq, w);
     float xco0 = f_to_x(_freq0, w);
     float xco1 = f_to_x(_freq1, w);
 
-
+    QPainterPath path(QPointF(0.,db_to_h(_dbgain(0, w, _q, xco),h))); // voice 0 filter painter
     QPainterPath path0(QPointF(0.,db_to_h(_dbgain(0, w, _q0, xco0),h))); // voice 0 filter painter
     QPainterPath path1(QPointF(0.,db_to_h(_dbgain(0, w, _q1, xco1),h))); // voice 1 filter painter
 
     for(int x = 0; x < w; x+=1) {
+        float y = db_to_h(_dbgain(x, w, _q, xco), h);
         float y0 = db_to_h(_dbgain(x, w, _q0, xco0), h);
         float y1 = db_to_h(_dbgain(x, w, _q1, xco1), h);
+        if (y < h)
+            path.lineTo(x,y);
         if (y0 < h)
             path0.lineTo(x,y0);
         if (y1 < h)
@@ -52,13 +56,14 @@ void FilterWidget::paintEvent(QPaintEvent *) {
     auto painter = QPainter(this);
     painter.setRenderHint(QPainter::Antialiasing);
     _pen.setWidthF(_linewidth);
+    _pen.setColor(QColor(100, 100, 100));
+    painter.strokePath(path, _pen);
     _pen.setColor(_color0);
     painter.strokePath(path1, _pen);
     _pen.setColor(_color1);
     painter.strokePath(path0, _pen);
-    _pen.setColor(QColor(150, 150, 150));
-    painter.setPen(_pen);
-    painter.drawLine(0, h, w, h);
+//    painter.setPen(_pen);
+//    painter.drawLine(0, h, w, h);
 
 //    qInfo(QString("hello world %1,%2").arg(w,h));
 //    qInfo("hello world: %d,%d",w,h);

@@ -88,6 +88,7 @@ void Synthesizer::midiEvent(quint32 message, quint32 timing) {
     switch (type) {
     case QMidiEvent::EventType::NoteOn:
         _addNote(note, velocity, channel);
+        qInfo("key pressed %d", note);
         break;
 
     case QMidiEvent::EventType::NoteOff:
@@ -103,4 +104,8 @@ void Synthesizer::midiEvent(quint32 message, quint32 timing) {
     default:
         break;
     }
+}
+
+void Synthesizer::updatePatch(Patch::PatchData &patch) {
+    _voice_mode = patch.voice_mode;
 }

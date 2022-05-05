@@ -10,7 +10,8 @@
 #include <cmath>
 #include <QFont>
 #include <QRect>
-
+#include <QTime>
+#include <QElapsedTimer>
 
 class KnobWidget : public QDial
 {
@@ -53,10 +54,21 @@ public slots:
 
     void setRealValue(double value);
 
+    void setKnobPressed() {emit knobPressed(); _timer.start();};
+    void setKnobReleased() {emit knobReleased(); if (_timer.elapsed() > 1000) {emit knobLongClicked();} else {emit knobClicked();}};
+
+signals:
+    void realValueUpdated(float value);
+    void knobPressed();
+    void knobReleased();
+    void knobLongClicked();
+    void knobClicked();
+
 protected:
     void paintEvent(QPaintEvent *pe) override;
 
 private:
+    QElapsedTimer _timer;
     QColor _color = Qt::white;
     double _linewidth = 1;
     bool _showtext;
@@ -71,8 +83,6 @@ private:
 
     void _onValueChanged(int value);
 
-signals:
-    void realValueUpdated(float value);
 };
 
 #endif // KNOBWIDGET_H

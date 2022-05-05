@@ -3,6 +3,8 @@
 
 #include <QObject>
 #include <QDir>
+#include <QtNumeric>
+
 
 class Patch : public QObject
 {
@@ -32,11 +34,6 @@ public:
         VOICE_DUOPHONIC,
     };
 
-    enum ChorusMode {
-        CHORUS_NONE,
-        CHORUS_ON
-    };
-
     enum ModSink {
         MOD_OSC_DETUNE,
         MOD_OSC_PITCH,
@@ -51,11 +48,11 @@ public:
     };
 
     enum ModSource {
-        MODSR_VEL,
-        MOD_LFO0,
-        MOD_LFO1,
-        MOD_ENV0,
-        MOD_ENV1,
+        MODSRC_VEL,
+        MODSRC_LFO0,
+        MODSRC_LFO1,
+        MODSRC_ENV0,
+        MODSRC_ENV1,
 
         NUM_MOD_SOURCES
     };
@@ -85,7 +82,7 @@ public:
 
         // Voices
         double voice_glide;
-        ChorusMode voice_chorus;
+        int voice_chorus;
 
         // Filter:
         double filter_freq;
@@ -113,6 +110,7 @@ public:
         TimbreData timbre[2];
         VoiceMode voice_mode;
         TimbreMode timbre_mode;
+        int activeTimbre;   // not really patch data but visualizers need this.
 
         // Midi
         ArpMode midi_arp_mode;
@@ -129,18 +127,18 @@ public:
         LfoShape lfo1_shape;
 
         // Mod Matrix
-        int8_t mod_matrix[ModSource::NUM_MOD_SOURCES][ModSink::NUM_MOD_SINKS];
+        qint8 mod_matrix[ModSource::NUM_MOD_SOURCES][ModSink::NUM_MOD_SINKS];
     };
 
-    int activeTimbre() {return _activeTimbre;};
+    int activeTimbre() {return _p.activeTimbre;};
 
 public slots:
-    void save(uint16_t idx);
-    void load(uint16_t idx);
+    void save(uint8_t idx);
+    void load(uint8_t idx);
 
     void updateVoiceMode(int m) {_p.voice_mode = VoiceMode(m); _onChange();};
     void updateTimbreMode(int m) {_p.timbre_mode = TimbreMode(m); _onChange();}
-    void updateTimbre(int i) {_activeTimbre = i; _onChange();};
+    void updateTimbre(int i) {_p.activeTimbre = i; _onReload(); _onChange();};
 
     void updateArpMode(int m) {_p.midi_arp_mode = ArpMode(m); _onChange();};
     void updateArpSteps(int m) {_p.midi_arp_steps = m; _onChange();};
@@ -152,43 +150,61 @@ public slots:
     void updateLfoShape0(int s) {_p.lfo0_shape = LfoShape(s); _onChange();};
     void updateLfoShape1(int s) {_p.lfo1_shape = LfoShape(s); _onChange();};
 
+    void updateOscShape0(double s) {_p.timbre[_p.activeTimbre].osc_shape0 = s; _onChange();};
+    void updateOscShape1(double s) {_p.timbre[_p.activeTimbre].osc_shape1 = s; _onChange();};
+    void updateOscDetune(double s) {_p.timbre[_p.activeTimbre].osc_detune = s; _onChange();};
+    void updateOscOctave(int o) {_p.timbre[_p.activeTimbre].osc_octave = o; _onChange();};
 
-    void updateOscShape0(double s) {_p.timbre[_activeTimbre].osc_shape0 = s; _onChange();};
-    void updateOscShape1(double s) {_p.timbre[_activeTimbre].osc_shape1 = s; _onChange();};
-    void updateOscDetune(double s) {_p.timbre[_activeTimbre].osc_detune = s; _onChange();};
-    void updateOscOctave(int o) {_p.timbre[_activeTimbre].osc_octave = o; _onChange();};
+    void updateVoiceGlide(double g) {_p.timbre[_p.activeTimbre].voice_glide = g; _onChange();};
+    void updateChorus(int m) {_p.timbre[_p.activeTimbre].voice_chorus = m; _onChange();};
 
-    void updateVoiceGlide(double g) {_p.timbre[_activeTimbre].voice_glide = g; _onChange();};
-    void updateChorus(int m) {_p.timbre[_activeTimbre].voice_chorus = ChorusMode(m); _onChange();};
+    void updateFilterFreq(double f) {_p.timbre[_p.activeTimbre].filter_freq = f; _onChange();};
+    void updateFilterResonance(double r) {_p.timbre[_p.activeTimbre].filter_resonance = r; _onChange();};
 
-    void updateFilterFreq(double f) {_p.timbre[_activeTimbre].filter_freq = f; _onChange();};
-    void updateFilterResonance(double r) {_p.timbre[_activeTimbre].filter_resonance = r; _onChange();};
+    void updateMixer0(double a) {_p.timbre[_p.activeTimbre].mixer_amount0 = a; _onChange();};
+    void updateMixer1(double a) {_p.timbre[_p.activeTimbre].mixer_amount1 = a; _onChange();};
 
-    void updateMixer0(double a) {_p.timbre[_activeTimbre].mixer_amount0 = a; _onChange();};
-    void updateMixer1(double a) {_p.timbre[_activeTimbre].mixer_amount1 = a; _onChange();};
+    void updateEnv0Attack(double s) {_p.timbre[_p.activeTimbre].env0_attack = s; _onChange();};
+    void updateEnv0Decay(double s) {_p.timbre[_p.activeTimbre].env0_decay = s; _onChange();};
+    void updateEnv0Sustain(double s) {_p.timbre[_p.activeTimbre].env0_sustain = s; _onChange();};
+    void updateEnv0Release(double s) {_p.timbre[_p.activeTimbre].env0_release = s; _onChange();};
 
-    void updateEnv0Attack(double s) {_p.timbre[_activeTimbre].env0_attack = s; _onChange();};
-    void updateEnv0Decay(double s) {_p.timbre[_activeTimbre].env0_decay = s; _onChange();};
-    void updateEnv0Sustain(double s) {_p.timbre[_activeTimbre].env0_sustain = s; _onChange();};
-    void updateEnv0Release(double s) {_p.timbre[_activeTimbre].env0_release = s; _onChange();};
+    void updateEnv1Attack(double s) {_p.timbre[_p.activeTimbre].env1_attack = s; _onChange();};
+    void updateEnv1Decay(double s) {_p.timbre[_p.activeTimbre].env1_decay = s; _onChange();};
+    void updateEnv1Sustain(double s) {_p.timbre[_p.activeTimbre].env1_sustain = s; _onChange();};
+    void updateEnv1Release(double s) {_p.timbre[_p.activeTimbre].env1_release = s; _onChange();};
 
-    void updateEnv1Attack(double s) {_p.timbre[_activeTimbre].env1_attack = s; _onChange();};
-    void updateEnv1Decay(double s) {_p.timbre[_activeTimbre].env1_decay = s; _onChange();};
-    void updateEnv1Sustain(double s) {_p.timbre[_activeTimbre].env1_sustain = s; _onChange();};
-    void updateEnv1Release(double s) {_p.timbre[_activeTimbre].env1_release = s; _onChange();};
-
+    // special patch load/save stuff
+//    void updatePatchHover(int n) {hover_idx = n; _onChange();};
+//    void loadPatch() {load(hover_idx); _onReload(); _onChange();};
+//    void savePatch() {save(hover_idx); _onChange();};
+    void patchButtonClicked();
+    void patchButtonLongClicked();
+    void patchButtonValueChanged(int n);
 private:
     void _onChange() {
         emit updated(_p);
     };
+    void _onReload() {
+        emit reloaded(_p);
+        emit updated(_p);
+    }
 
-    uint16_t current_idx;
+    uint8_t current_idx;
+    uint8_t hover_idx;
     QDir folder;
     Patch::PatchData _p;
-    int _activeTimbre = 0;
+
+    bool saveActive = false;
+    bool loadActive = false;
+    bool yesSelected = false;
+    int patchButtonValue = 0;
+    int lastPatchButtonValue = 0;
 
 signals:
     void updated(const Patch::PatchData &data);
+    void reloaded(const Patch::PatchData &data);
+    void patchSavingState(int current_idx, int hover_idx, bool saveActive, bool loadActive, bool yesSelected);
 };
 
 #endif // PATCH_H

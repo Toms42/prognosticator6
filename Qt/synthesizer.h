@@ -16,9 +16,10 @@ public:
 
 signals:
 
-private slots:
-    void update(void);
+public slots:
     void midiEvent(quint32 message, quint32 timing);
+    void update();
+    void updatePatch(Patch::PatchData &patch);
 
 private:
     void _addNote(int note, int velocity, int channel);

@@ -473,7 +473,7 @@ QGroupBox::title {
         </widget>
        </item>
        <item row="0" column="1" rowspan="3">
-        <widget class="FilterWidget" name="envelopeViewer" native="true">
+        <widget class="FilterWidget" name="filterViewer" native="true">
          <property name="autoFillBackground">
           <bool>false</bool>
          </property>
@@ -596,7 +596,7 @@ QGroupBox::title {
         <string notr="true">color: rgb(255, 124, 112);</string>
        </property>
        <property name="text">
-        <string>123</string>
+        <string>1</string>
        </property>
       </widget>
       <widget class="QLabel" name="labelNextPatch">
@@ -619,7 +619,7 @@ QGroupBox::title {
         <string notr="true">color: rgb(255, 124, 112);</string>
        </property>
        <property name="text">
-        <string>134</string>
+        <string>1</string>
        </property>
       </widget>
       <widget class="QLabel" name="labelText">
@@ -672,7 +672,7 @@ QGroupBox::title {
        <property name="geometry">
         <rect>
          <x>330</x>
-         <y>49</y>
+         <y>48</y>
          <width>51</width>
          <height>20</height>
         </rect>
@@ -695,7 +695,7 @@ QGroupBox::title {
        <property name="geometry">
         <rect>
          <x>270</x>
-         <y>84</y>
+         <y>85</y>
          <width>41</width>
          <height>16</height>
         </rect>
@@ -750,6 +750,9 @@ QRadioButton::indicator::checked {
          <width>8</width>
          <height>8</height>
         </size>
+       </property>
+       <property name="autoExclusive">
+        <bool>false</bool>
        </property>
       </widget>
       <widget class="QRadioButton" name="radioLoadYes">
@@ -812,6 +815,9 @@ QRadioButton::indicator::checked {
          <height>8</height>
         </size>
        </property>
+       <property name="autoExclusive">
+        <bool>false</bool>
+       </property>
       </widget>
       <widget class="QRadioButton" name="radioSaveNo">
        <property name="geometry">
@@ -873,12 +879,18 @@ QRadioButton::indicator::checked {
          <height>8</height>
         </size>
        </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>false</bool>
+       </property>
       </widget>
       <widget class="QRadioButton" name="radioSaveYes">
        <property name="geometry">
         <rect>
          <x>330</x>
-         <y>70</y>
+         <y>69</y>
          <width>51</width>
          <height>16</height>
         </rect>
@@ -933,6 +945,12 @@ QRadioButton::indicator::checked {
          <width>8</width>
          <height>8</height>
         </size>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>false</bool>
        </property>
       </widget>
       <widget class="KnobWidget" name="knobVolume">
@@ -1243,7 +1261,7 @@ QGroupBox::title {
           </color>
          </property>
          <property name="showtext" stdset="0">
-          <bool>false</bool>
+          <bool>true</bool>
          </property>
          <property name="unit" stdset="0">
           <string/>
@@ -1258,13 +1276,13 @@ QGroupBox::title {
           <double>5.000000000000000</double>
          </property>
          <property name="logarithmic" stdset="0">
-          <bool>true</bool>
+          <bool>false</bool>
          </property>
          <property name="valmin" stdset="0">
           <double>1.000000000000000</double>
          </property>
          <property name="valmax" stdset="0">
-          <double>3.000000000000000</double>
+          <double>5.000000000000000</double>
          </property>
         </widget>
        </item>
@@ -1354,61 +1372,6 @@ QRadioButton::indicator::checked {
            </widget>
           </item>
           <item>
-           <widget class="QRadioButton" name="radioChordMinor">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>12</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <family>DIN</family>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QRadioButton {
-	color:  rgb(100,100,100);
-}
-QRadioButton::checked {
-	color: rgb(255, 124, 112);
-}
-
-QRadioButton::indicator {
-    width: 7px;
-    height: 7px;
-	color: rgb(255, 124, 112);
-}
-QRadioButton::indicator::unchecked {
-	opacity: 0%;
-}
-
-QRadioButton::indicator::checked {
-    opacity: 100%;
-	color: rgb(255, 124, 112);
-	selection-color: rgb(255, 124, 112);
-	background-color: rgb(255, 124, 112);
-}
-</string>
-            </property>
-            <property name="text">
-             <string>chord.minor</string>
-            </property>
-            <property name="iconSize">
-             <size>
-              <width>8</width>
-              <height>8</height>
-             </size>
-            </property>
-           </widget>
-          </item>
-          <item>
            <widget class="QRadioButton" name="radioChordMajor">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
@@ -1454,6 +1417,61 @@ QRadioButton::indicator::checked {
             </property>
             <property name="text">
              <string>chord.major</string>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>8</width>
+              <height>8</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="radioChordMinor">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>12</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>DIN</family>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QRadioButton {
+	color:  rgb(100,100,100);
+}
+QRadioButton::checked {
+	color: rgb(255, 124, 112);
+}
+
+QRadioButton::indicator {
+    width: 7px;
+    height: 7px;
+	color: rgb(255, 124, 112);
+}
+QRadioButton::indicator::unchecked {
+	opacity: 0%;
+}
+
+QRadioButton::indicator::checked {
+    opacity: 100%;
+	color: rgb(255, 124, 112);
+	selection-color: rgb(255, 124, 112);
+	background-color: rgb(255, 124, 112);
+}
+</string>
+            </property>
+            <property name="text">
+             <string>chord.minor</string>
             </property>
             <property name="iconSize">
              <size>
@@ -1909,7 +1927,7 @@ QRadioButton::indicator::checked {
           </color>
          </property>
          <property name="showtext" stdset="0">
-          <bool>false</bool>
+          <bool>true</bool>
          </property>
          <property name="unit" stdset="0">
           <string/>
@@ -1924,13 +1942,13 @@ QRadioButton::indicator::checked {
           <double>5.000000000000000</double>
          </property>
          <property name="logarithmic" stdset="0">
-          <bool>true</bool>
+          <bool>false</bool>
          </property>
          <property name="valmin" stdset="0">
           <double>1.000000000000000</double>
          </property>
          <property name="valmax" stdset="0">
-          <double>3.000000000000000</double>
+          <double>5.000000000000000</double>
          </property>
         </widget>
        </item>
@@ -2136,10 +2154,10 @@ QGroupBox::title {
           </sizepolicy>
          </property>
          <property name="minimum">
-          <number>1</number>
+          <number>0</number>
          </property>
          <property name="maximum">
-          <number>4</number>
+          <number>3</number>
          </property>
          <property name="color" stdset="0">
           <color>

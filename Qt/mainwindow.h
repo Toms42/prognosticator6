@@ -20,11 +20,17 @@ public:
 
     void connectToPatch(Patch *patch);
 
-public slots:
     void onVoiceMode(Patch::VoiceMode m);
     void onTimbreMode(Patch::TimbreMode m);
     void onChordMode(Patch::ChordMode m);
     void onArpMode(Patch::ArpMode m);
+
+public slots:
+
+    void onPatchUpdated(const Patch::PatchData &patch);
+    void onPatchReloaded(const Patch::PatchData &patch);
+    void onPatchSavingStateUpdate(int current_idx, int hover_idx, bool saveActive, bool loadActive, bool yesSelected);
+
 
 private:
     Ui::MainWindow *ui;

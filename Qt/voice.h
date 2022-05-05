@@ -26,7 +26,7 @@ private:
     double _detune1;
     uint8_t _octave1;
     PseudoVoice _pvoices[6];
-    Patch::ChorusMode _chorus_mode;
+    int _chorus_mode;
     Patch::VoiceMode _voice_mode;
     Envelope _filter_env;
 };

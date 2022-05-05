@@ -10,6 +10,7 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    debugwindow.cpp \
     envelope.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -25,6 +26,7 @@ SOURCES += \
     widgets/oscillatorwidget.cpp
 
 HEADERS += \
+    debugwindow.h \
     envelope.h \
     mainwindow.h \
     modmatrix.h \
@@ -41,6 +43,7 @@ HEADERS += \
     widgets/oscillatorwidget.h
 
 FORMS += \
+    debugwindow.ui \
     mainwindow.ui
 
 # Default rules for deployment.

@@ -27,6 +27,8 @@ public:
     QColor getColor0() const {return _color0;};
     QColor getColor1() const {return _color1;};
     double getLineWidth() const {return _linewidth;};
+    void setCutoff(double freq) {_freq = freq; update();};
+    void setResonance(double Q) {_q = Q; update();};
 
 protected:
     void paintEvent(QPaintEvent *event) override;
@@ -48,6 +50,8 @@ private:
     QColor _color1 = Qt::white;
     double _linewidth = 1;
 
+    float _freq = 800;
+    float _q = 20;
     float _freq0 = 300;
     float _q0 = 4;
     float _freq1 =8000;
