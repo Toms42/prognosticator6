@@ -6,6 +6,12 @@ Synthesizer::Synthesizer(QObject *parent)
 
 }
 
+void Synthesizer::run() {
+    while(!isInterruptionRequested()) {
+
+    }
+}
+
 void Synthesizer::update(void) {
     qint64 t = QDateTime::currentMSecsSinceEpoch();
 

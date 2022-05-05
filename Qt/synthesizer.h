@@ -7,13 +7,15 @@
 #include <voice.h>
 #include <QMidiIn.h>
 #include <QMidiFile.h>
+#include <QThread>
 
-class Synthesizer : public QObject
+class Synthesizer : public QThread
 {
     Q_OBJECT
 public:
     explicit Synthesizer(QObject *parent = nullptr);
-
+    void run() override;
+    void setPeriod(int ms) {_period=ms;};
 signals:
 
 public slots:
@@ -25,7 +27,7 @@ private:
     void _addNote(int note, int velocity, int channel);
     void _releaseNote(int note, int channel);
 
-    QTimer _timer;
+    int _period=10;
     Voice _v0;
     Voice _v1;
     Patch::VoiceMode _voice_mode;

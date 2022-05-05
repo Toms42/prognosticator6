@@ -9,6 +9,9 @@
 #include "patch.h"
 #include <QMidiIn.h>
 
+#include <QTimer>
+#include <QThread>
+
 #define SHOWDEBUGWINDOW
 
 int main(int argc, char *argv[])
@@ -23,9 +26,9 @@ int main(int argc, char *argv[])
     wd.show();
 #endif
 
-    /////////////////////
-    /// Establish MIDI //
-    /////////////////////
+    ////////////////////
+    // Establish MIDI //
+    ////////////////////
 
     auto midi = QMidiIn();
     QMap<QString,QString> midi_devices = midi.devices();
@@ -52,9 +55,9 @@ int main(int argc, char *argv[])
         qWarning("No midi devices found");
     }
 
-    //////////////////
-    /// Setup Synth //
-    //////////////////
+    /////////////////
+    // Setup Synth //
+    /////////////////
 
     auto synth = Synthesizer();
     QObject::connect(&midi, &QMidiIn::midiEvent, &synth, &Synthesizer::midiEvent);
@@ -63,5 +66,20 @@ int main(int argc, char *argv[])
     w.connectToPatch(&patch);
     wd.connectToPatch(&patch);
 
+    /////////////////////////
+    // Start synth (200Hz) //
+    /////////////////////////
+    synth.setPeriod(4);
+    synth.start(QThread::TimeCriticalPriority);
+
+//    auto t = QTimer();
+//    QObject::connect(&t, &QTimer::timeout, &synth, &Synthesizer::update);
+//    t.setTimerType(Qt::TimerType::PreciseTimer);
+//    t.setSingleShot(false);
+//    t.start(5);
+
     return a.exec();
+    synth.quit();
+    synth.requestInterruption();
+    synth.wait();
 }
