@@ -1,5 +1,12 @@
 #include "synthesizer.h"
 
+#ifdef linux
+#include <sys/time.h>
+#include <unistd.h>
+#else
+#error linux only fam
+#endif
+
 Synthesizer::Synthesizer(QObject *parent)
     : QThread{parent}
 {
@@ -8,17 +15,41 @@ Synthesizer::Synthesizer(QObject *parent)
 
 void Synthesizer::run() {
     while(!isInterruptionRequested()) {
+        update();
 
+        timespec ts;
+        clock_gettime(CLOCK_REALTIME, &ts);
+        long tns = (ts.tv_nsec%5000000)/1000;
+        usleep(5000-tns);   // wait until next 5000us multiple
     }
 }
 
-void Synthesizer::update(void) {
-    qint64 t = QDateTime::currentMSecsSinceEpoch();
+void Synthesizer::busyboi(void) {
+    double dude = 1E7;
+    for(long i = 0; i < 1E4; i++) {
+        dude /= 0.41241212;
+    }
+    qInfo(qUtf8Printable(QString("busy boi was busy dude: %1").arg(QString::number(dude))));
+}
 
-    // Update both voices.
-    // Envelopes should update, and we can
-    _v0.update(t);
-    _v1.update(t);
+void Synthesizer::update(void) {
+//    qint64 t = QDateTime::currentMSecsSinceEpoch()*1000;
+    timespec ts;
+    clock_gettime(CLOCK_REALTIME, &ts);
+    int diff = ts.tv_nsec - last.tv_nsec;
+    last = ts;
+    diff = diff < 0 ? diff + 1E9 : diff;
+
+//    qInfo(qUtf8Printable(QString::number((diff/1000))));
+    if (abs(diff/1000 - 5000) > 150) {
+        qInfo(qUtf8Printable(QString("Greater than 150uS jitter: %1").arg(QString::number(diff/1000))));
+    }
+
+
+//    // Update both voices.
+//    // Envelopes should update, and we can
+//    _v0.update(t);
+//    _v1.update(t);
 }
 
 

@@ -22,11 +22,13 @@ public slots:
     void midiEvent(quint32 message, quint32 timing);
     void update();
     void updatePatch(Patch::PatchData &patch);
+    void busyboi(void);
 
 private:
     void _addNote(int note, int velocity, int channel);
     void _releaseNote(int note, int channel);
 
+    timespec last;
     int _period=10;
     Voice _v0;
     Voice _v1;

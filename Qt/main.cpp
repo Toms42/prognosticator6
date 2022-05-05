@@ -80,11 +80,17 @@ int main(int argc, char *argv[])
     synth.setPeriod(4);
     synth.start(QThread::TimeCriticalPriority);
 
-//    auto t = QTimer();
-//    QObject::connect(&t, &QTimer::timeout, &synth, &Synthesizer::update);
-//    t.setTimerType(Qt::TimerType::PreciseTimer);
-//    t.setSingleShot(false);
+    QTimer t;
+    QObject::connect(&t, &QTimer::timeout, &synth, &Synthesizer::update);
+    t.setTimerType(Qt::TimerType::PreciseTimer);
+    t.setSingleShot(false);
 //    t.start(5);
+
+    QTimer t2;
+    QObject::connect(&t2, &QTimer::timeout, &synth, &Synthesizer::busyboi);
+    t2.setTimerType(Qt::TimerType::PreciseTimer);
+    t2.setSingleShot(false);
+    t2.start(500);
 
     return a.exec();
     synth.quit();
