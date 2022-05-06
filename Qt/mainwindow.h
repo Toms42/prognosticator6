@@ -5,6 +5,9 @@
 #include "synthesizer.h"
 #include "patch.h"
 #include <QRadioButton>
+#include "debugwindow.h"
+#include "widgets/knobwidget.h"
+#include "knobinterface.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -19,6 +22,8 @@ public:
     ~MainWindow();
 
     void connectToPatch(Patch *patch);
+    void connectMatrixKnob(KnobWidget *knob);
+    void connectKnobSystem(KnobInterface *ki);
 
     void onVoiceMode(Patch::VoiceMode m);
     void onTimbreMode(Patch::TimbreMode m);
@@ -26,11 +31,9 @@ public:
     void onArpMode(Patch::ArpMode m);
 
 public slots:
-
     void onPatchUpdated(const Patch::PatchData &patch);
     void onPatchReloaded(const Patch::PatchData &patch);
     void onPatchSavingStateUpdate(int current_idx, int hover_idx, bool saveActive, bool loadActive, bool yesSelected);
-
 
 private:
     Ui::MainWindow *ui;

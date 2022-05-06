@@ -7,13 +7,17 @@
 
 #include "synthesizer.h"
 #include "patch.h"
+#include "hidsender.h"
+
 #include <QMidiIn.h>
 
 #include <QTimer>
 #include <QThread>
 #include <QFontDatabase>
+#include "knobinterface.h"
 
 #define SHOWDEBUGWINDOW
+#define I2CKNOBS
 
 int main(int argc, char *argv[])
 {
@@ -34,9 +38,9 @@ int main(int argc, char *argv[])
 #endif
     w.show();
 
-    ////////////////////
-    // Establish MIDI //
-    ////////////////////
+    ////////////////////////////
+    // Establish MIDI and HID //
+    ////////////////////////////
 
     QMidiIn midi;
     QMap<QString,QString> midi_devices = midi.devices();
@@ -55,7 +59,7 @@ int main(int argc, char *argv[])
         midi.connect(midi_devices.keys()[0]);
         midi.start();
         if (midi.isConnected()) {
-            qInfo("Connection successful.");
+            qInfo("Midi connection successful.");
         } else {
             qWarning("Midi connection failed!");
         }
@@ -63,22 +67,35 @@ int main(int argc, char *argv[])
         qWarning("No midi devices found");
     }
 
+    // setup hid
+    HidSender hidsender;
+
     /////////////////
     // Setup Synth //
     /////////////////
 
     Synthesizer synth;
     QObject::connect(&midi, &QMidiIn::midiEvent, &synth, &Synthesizer::midiEvent);
-
+    KnobInterface ki;
     Patch patch(QDir(QDir::home().absolutePath() + QString("/.prog-patches/")));
     w.connectToPatch(&patch);
+    w.connectKnobSystem(&ki);
     wd.connectToPatch(&patch);
+    wd.connectKnobSystem(&ki);
+
+    // connections between the two ui windows:
+    w.connectMatrixKnob(wd.getMatrixKnob());
+
+    synth.connectPatch(&patch);
+    patch.refresh();
 
     /////////////////////////
     // Start synth (200Hz) //
     /////////////////////////
-    synth.setPeriod(4);
     synth.start(QThread::TimeCriticalPriority);
+#ifdef I2CKNOBS
+    ki.start();
+#endif
 
     QTimer t;
     QObject::connect(&t, &QTimer::timeout, &synth, &Synthesizer::update);

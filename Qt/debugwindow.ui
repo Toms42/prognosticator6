@@ -110,8 +110,8 @@ QPushButton:pressed {
       <widget class="QPushButton" name="buttonTimbreToggle">
        <property name="geometry">
         <rect>
-         <x>10</x>
-         <y>210</y>
+         <x>80</x>
+         <y>180</y>
          <width>131</width>
          <height>25</height>
         </rect>
@@ -127,6 +127,87 @@ QPushButton:pressed {
        </property>
        <property name="text">
         <string>toggle timbre</string>
+       </property>
+       <property name="autoDefault">
+        <bool>false</bool>
+       </property>
+       <property name="default">
+        <bool>false</bool>
+       </property>
+       <property name="flat">
+        <bool>false</bool>
+       </property>
+      </widget>
+      <widget class="KnobWidget" name="knobMatrix">
+       <property name="geometry">
+        <rect>
+         <x>190</x>
+         <y>10</y>
+         <width>81</width>
+         <height>81</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>10</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximum">
+        <number>255</number>
+       </property>
+       <property name="color" stdset="0">
+        <color>
+         <red>193</red>
+         <green>125</green>
+         <blue>17</blue>
+        </color>
+       </property>
+       <property name="showtext" stdset="0">
+        <bool>false</bool>
+       </property>
+       <property name="unit" stdset="0">
+        <string/>
+       </property>
+       <property name="numdigits" stdset="0">
+        <number>0</number>
+       </property>
+       <property name="label" stdset="0">
+        <string>patch</string>
+       </property>
+       <property name="linewidth" stdset="0">
+        <double>5.000000000000000</double>
+       </property>
+       <property name="logarithmic" stdset="0">
+        <bool>false</bool>
+       </property>
+       <property name="valmin" stdset="0">
+        <double>0.000000000000000</double>
+       </property>
+       <property name="valmax" stdset="0">
+        <double>255.000000000000000</double>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="buttonMatrix">
+       <property name="geometry">
+        <rect>
+         <x>170</x>
+         <y>100</y>
+         <width>131</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    background-color: black;
+	color:white;
+}
+QPushButton:pressed {
+    background-color: rgb(85, 87, 83);
+}</string>
+       </property>
+       <property name="text">
+        <string>matrix</string>
        </property>
        <property name="autoDefault">
         <bool>false</bool>

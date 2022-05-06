@@ -19,17 +19,17 @@ void Synthesizer::run() {
 
         timespec ts;
         clock_gettime(CLOCK_REALTIME, &ts);
-        long tns = (ts.tv_nsec%5000000)/1000;
-        usleep(5000-tns);   // wait until next 5000us multiple
+        long tus = (ts.tv_nsec%_period_us*1000)/1000;
+        usleep(_period_us-tus);   // wait until next 5000us multiple
     }
 }
 
 void Synthesizer::busyboi(void) {
     double dude = 1E7;
     for(long i = 0; i < 1E4; i++) {
-        dude /= 0.41241212;
+        dude /= 0.412;
     }
-    qInfo(qUtf8Printable(QString("busy boi was busy dude: %1").arg(QString::number(dude))));
+//    qInfo(qUtf8Printable(QString("busy boi was busy dude: %1").arg(QString::number(dude))));
 }
 
 void Synthesizer::update(void) {
@@ -41,17 +41,31 @@ void Synthesizer::update(void) {
     diff = diff < 0 ? diff + 1E9 : diff;
 
 //    qInfo(qUtf8Printable(QString::number((diff/1000))));
-    if (abs(diff/1000 - 5000) > 150) {
-        qInfo(qUtf8Printable(QString("Greater than 150uS jitter: %1").arg(QString::number(diff/1000))));
+    if (abs(diff/1000 - _period_us) > 150) {
+//        qInfo(qUtf8Printable(QString("Greater than 150uS jitter: %1").arg(QString::number(diff/1000))));
     }
 
 
-//    // Update both voices.
-//    // Envelopes should update, and we can
-//    _v0.update(t);
-//    _v1.update(t);
-}
+    // Update both voices.
+    // Envelopes should update, and we can
+    quint64 t = ts.tv_sec*1E6 + ts.tv_nsec/1E3;
 
+    SynthState state;
+    state.v0 = _v0.update(t);
+    state.v1 = _v1.update(t);
+    state.add = _voice_mode == Patch::VOICE_DUOPHONIC || _timbre_mode == Patch::TIMBRE_DUAL || _timbre_mode == Patch::TIMBRE_DUALMIDI || _timbre_mode == Patch::TIMBRE_SINGLE_STEREO;
+    state.volume = 1.;
+
+    QString msg = "notes: ";
+    msg += state.v0.s0.amp > 0 ? " " + QString::number(state.v0.s0.freq/500) + ":" + QString::number(state.v0.s0.amp) : "";
+    msg += state.v0.s2.amp > 0 ? " " + QString::number(state.v0.s2.freq/500) + ":" + QString::number(state.v0.s2.amp) : "";
+    msg += state.v0.s4.amp > 0 ? " " + QString::number(state.v0.s3.freq/500) + ":" + QString::number(state.v0.s3.amp) : "";
+    msg += state.v0.s6.amp > 0 ? " " + QString::number(state.v0.s5.freq/500) + ":" + QString::number(state.v0.s5.amp) : "";
+    msg += state.v0.s8.amp > 0 ? " " + QString::number(state.v0.s7.freq/500) + ":" + QString::number(state.v0.s7.amp) : "";
+    msg += state.v0.s10.amp > 0 ? " " + QString::number(state.v0.s9.freq/500) + ":" + QString::number(state.v0.s9.amp) : "";
+    msg += "\n";
+    qInfo(qUtf8Printable(msg));
+}
 
 // Trigger a note. This sends the note to the appropriate voice(s) based on timbre and voicing modes.
 // Note that depending on voice modes the voices might behave differently when a new note is added.
@@ -88,7 +102,7 @@ void Synthesizer::_addNote(int note, int velocity, int channel) {
             _v1.add_note(note, velocity);
         else {
             //both notes are in RELEASE or ON. Override the oldest note.
-            if (_v0.age_ms() > _v1.age_ms())
+            if (_v0.age() > _v1.age())
                 _v0.add_note(note, velocity);
             else
                 _v1.add_note(note, velocity);
@@ -108,6 +122,11 @@ void Synthesizer::_releaseNote(int note, int channel) {
         _v0.release_note(note);
         _v1.release_note(note);
     }
+}
+
+void Synthesizer::_setMod(int amount) {
+    _v0.set_mod(double(amount)/16384);
+    _v1.set_mod(double(amount)/16384);
 }
 
 // Callback for midi event. Triggers note adds, mod changes, etc.
@@ -138,11 +157,11 @@ void Synthesizer::midiEvent(quint32 message, quint32 timing) {
     case QMidiEvent::EventType::ChannelPressure:
         break;
 
+    case QMidiEvent::EventType::ControlChange:
+        _setMod(amount);
+        break;
+
     default:
         break;
     }
-}
-
-void Synthesizer::updatePatch(Patch::PatchData &patch) {
-    _voice_mode = patch.voice_mode;
 }

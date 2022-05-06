@@ -739,7 +739,6 @@ QRadioButton::indicator {
 }
 QRadioButton::indicator::unchecked {
 	opacity: 0%;
-	visible: false;
 	color: black;
 	background-color: black;
 }
@@ -808,7 +807,6 @@ QRadioButton::indicator {
 }
 QRadioButton::indicator::unchecked {
 	opacity: 0%;
-	visible: false;
 	color: black;
 	background-color: black;
 }
@@ -877,7 +875,6 @@ QRadioButton::indicator {
 }
 QRadioButton::indicator::unchecked {
 	opacity: 0%;
-	visible: false;
 	color: black;
 	background-color: black;
 }
@@ -949,7 +946,6 @@ QRadioButton::indicator {
 }
 QRadioButton::indicator::unchecked {
 	opacity: 0%;
-	visible: false;
 	color: black;
 	background-color: black;
 }
@@ -1376,7 +1372,6 @@ QRadioButton::indicator {
 }
 QRadioButton::indicator::unchecked {
 	opacity: 0%;
-	visible: false;
 	color: black;
 	background-color: black;
 }
@@ -1439,7 +1434,6 @@ QRadioButton::indicator {
 }
 QRadioButton::indicator::unchecked {
 	opacity: 0%;
-	visible: false;
 	color: black;
 	background-color: black;
 }
@@ -1499,7 +1493,6 @@ QRadioButton::indicator {
 }
 QRadioButton::indicator::unchecked {
 	opacity: 0%;
-	visible: false;
 	color: black;
 	background-color: black;
 }
@@ -1559,7 +1552,6 @@ QRadioButton::indicator {
 }
 QRadioButton::indicator::unchecked {
 	opacity: 0%;
-	visible: false;
 	color: black;
 	background-color: black;
 }
@@ -1619,7 +1611,6 @@ QRadioButton::indicator {
 }
 QRadioButton::indicator::unchecked {
 	opacity: 0%;
-	visible: false;
 	color: black;
 	background-color: black;
 }
@@ -1709,7 +1700,6 @@ QRadioButton::indicator {
 }
 QRadioButton::indicator::unchecked {
 	opacity: 0%;
-	visible: false;
 	color: black;
 	background-color: black;
 }
@@ -1772,7 +1762,6 @@ QRadioButton::indicator {
 }
 QRadioButton::indicator::unchecked {
 	opacity: 0%;
-	visible: false;
 	color: black;
 	background-color: black;
 }
@@ -1832,7 +1821,6 @@ QRadioButton::indicator {
 }
 QRadioButton::indicator::unchecked {
 	opacity: 0%;
-	visible: false;
 	color: black;
 	background-color: black;
 }
@@ -1892,7 +1880,6 @@ QRadioButton::indicator {
 }
 QRadioButton::indicator::unchecked {
 	opacity: 0%;
-	visible: false;
 	color: black;
 	background-color: black;
 }
@@ -1952,7 +1939,6 @@ QRadioButton::indicator {
 }
 QRadioButton::indicator::unchecked {
 	opacity: 0%;
-	visible: false;
 	color: black;
 	background-color: black;
 }
@@ -3626,6 +3612,41 @@ QGroupBox::title {
       <property name="title">
        <string>matrix</string>
       </property>
+      <layout class="QGridLayout" name="gridLayout_10">
+       <item row="0" column="0">
+        <widget class="MatrixWidget" name="matrixWidget" native="true">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(46, 52, 54);</string>
+         </property>
+         <property name="colorpos" stdset="0">
+          <color>
+           <red>250</red>
+           <green>255</green>
+           <blue>161</blue>
+          </color>
+         </property>
+         <property name="colorneg" stdset="0">
+          <color>
+           <red>255</red>
+           <green>197</green>
+           <blue>177</blue>
+          </color>
+         </property>
+         <property name="linewidth" stdset="0">
+          <double>4.000000000000000</double>
+         </property>
+         <property name="gridwidth" stdset="0">
+          <double>1.500000000000000</double>
+         </property>
+         <property name="topmargin" stdset="0">
+          <double>15.000000000000000</double>
+         </property>
+         <property name="leftmargin" stdset="0">
+          <double>60.000000000000000</double>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </widget>
     </item>
    </layout>
@@ -3659,6 +3680,12 @@ QGroupBox::title {
    <class>LfoWidget</class>
    <extends>QWidget</extends>
    <header>widgets/lfowidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>MatrixWidget</class>
+   <extends>QWidget</extends>
+   <header>widgets/matrixwidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

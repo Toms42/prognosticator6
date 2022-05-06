@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 #include "patch.h"
+#include "widgets/knobwidget.h"
+#include "knobinterface.h"
 
 namespace Ui {
 class DebugWindow;
@@ -15,6 +17,8 @@ class DebugWindow : public QMainWindow
 public:
     explicit DebugWindow(QWidget *parent = nullptr);
     void connectToPatch(Patch *patch);
+    void connectKnobSystem(KnobInterface *ki);
+    KnobWidget *getMatrixKnob();
     ~DebugWindow();
 
 public slots:

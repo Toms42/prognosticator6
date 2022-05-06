@@ -13,6 +13,8 @@ CONFIG += c++11
 SOURCES += \
     debugwindow.cpp \
     envelope.cpp \
+    hidsender.cpp \
+    i2c/knobs.cpp \
     main.cpp \
     mainwindow.cpp \
     modmatrix.cpp \
@@ -24,16 +26,22 @@ SOURCES += \
     widgets/filterwidget.cpp \
     widgets/knobwidget.cpp \
     widgets/lfowidget.cpp \
+    widgets/matrixwidget.cpp \
     widgets/oscillatorwidget.cpp
 
 HEADERS += \
     debugwindow.h \
     envelope.h \
+    hidsender.h \
+    i2c/knobs.h \
+    knobinterface.h \
     mainwindow.h \
     modmatrix.h \
+    musicutil.h \
     patch.h \
     pseudovoice.h \
     simplerandom.h \
+    state.h \
     synth_util.h \
     synthesizer.h \
     voice.h \
@@ -41,6 +49,7 @@ HEADERS += \
     widgets/filterwidget.h \
     widgets/knobwidget.h \
     widgets/lfowidget.h \
+    widgets/matrixwidget.h \
     widgets/oscillatorwidget.h
 
 FORMS += \
@@ -56,3 +65,5 @@ DISTFILES +=
 
 RESOURCES += \
     resources/resources.qrc
+
+unix:!macx: LIBS += -lhidapi-hidraw -ludev

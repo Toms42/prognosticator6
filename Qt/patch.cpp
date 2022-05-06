@@ -88,17 +88,21 @@ const QString ModSourceNames[Patch::NUM_MOD_SOURCES] = {
     "MODSRC_LFO0",
     "MODSRC_LFO1",
     "MODSRC_ENV0",
-    "MODSRC_ENV1"
+    "MODSRC_ENV1",
+    "MODSRC_MOD",
+    "MODSRC_PB",
 };
 const QString ModSinkNames[Patch::NUM_MOD_SINKS] = {
     "MOD_OSC_DETUNE",
     "MOD_OSC_PITCH",
     "MOD_FILTER_CUTOFF",
     "MOD_FILTER_RESONANCE",
-    "MOD_FILTER_AMP",
+    "MOD_AMP",
     "MOD_CHORUS_DEPTH",
     "MOD_STEREOPAN",
     "MOD_STEREOPHASE",
+    "MOD_LFO0",
+    "MOD_LFO1"
 };
 
 QJsonObject saveTimbre(const Patch::TimbreData &data) {

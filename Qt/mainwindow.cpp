@@ -4,6 +4,8 @@
 #include "widgets/filterwidget.h"
 #include "widgets/oscillatorwidget.h"
 #include "widgets/lfowidget.h"
+#include "widgets/matrixwidget.h"
+#include "knobinterface.h"
 
 #include "synthesizer.h"
 #include "patch.h"
@@ -17,10 +19,15 @@ MainWindow::MainWindow(QWidget *parent)
         widget->setFont(QApplication::font());
         widget->update();
     }
+
     connect(ui->knobShape0, &KnobWidget::realValueUpdated, ui->oscillatorViewer, &OscillatorWidget::setShape0);
     connect(ui->knobShape1, &KnobWidget::realValueUpdated, ui->oscillatorViewer, &OscillatorWidget::setShape1);
     connect(ui->knobLfoShape0, &KnobWidget::valueChanged, ui->lfoViewer0, &LfoWidget::updateShape);
     connect(ui->knobLfoShape1, &KnobWidget::valueChanged, ui->lfoViewer1, &LfoWidget::updateShape);
+}
+
+void MainWindow::connectMatrixKnob(KnobWidget *knob) {
+    ui->matrixWidget->connectMatrixKnob(knob);
 }
 
 void MainWindow::onPatchSavingStateUpdate(int current_idx, int hover_idx, bool saveActive, bool loadActive, bool yesSelected) {
@@ -161,11 +168,17 @@ void MainWindow::connectToPatch(Patch *patch) {
     connect(ui->filterKnobSustain, &KnobWidget::realValueUpdated, patch, &Patch::updateEnv1Sustain);
     connect(ui->filterKnobRelease, &KnobWidget::realValueUpdated, patch, &Patch::updateEnv1Release);
 
+    // mod matrix
+    connect(patch, &Patch::updated, ui->matrixWidget, &MatrixWidget::onPatchUpdated);
+    connect(patch, &Patch::reloaded, ui->matrixWidget, &MatrixWidget::onPatchReload);
+    connect(ui->matrixWidget, &MatrixWidget::cellSet, patch, &Patch::updateModCell);
+
     // patch update
     connect(patch, &Patch::updated, this, &MainWindow::onPatchUpdated);
     connect(patch, &Patch::reloaded, this, &MainWindow::onPatchReloaded);
     connect(patch, &Patch::patchSavingState, this, &MainWindow::onPatchSavingStateUpdate);
 }
+
 void MainWindow::onPatchReloaded(const Patch::PatchData &patch) {
     ui->knobVoice->setValue(patch.voice_mode);
     ui->knobTimbre->setValue(patch.timbre_mode);
@@ -184,16 +197,47 @@ void MainWindow::onPatchReloaded(const Patch::PatchData &patch) {
     ui->knobChorus->setValue(patch.timbre[patch.activeTimbre].voice_chorus);
     ui->knobCutoff->setRealValue(patch.timbre[patch.activeTimbre].filter_freq);
     ui->knobResonance->setRealValue(patch.timbre[patch.activeTimbre].filter_resonance);
-    ui->knobMix0->setRealValue(patch.timbre[patch.activeTimbre].mixer_amount0);
-    ui->knobMix1->setRealValue(patch.timbre[patch.activeTimbre].mixer_amount1);
+    ui->knobMix0->setRealValue(100*patch.timbre[patch.activeTimbre].mixer_amount0);
+    ui->knobMix1->setRealValue(100*patch.timbre[patch.activeTimbre].mixer_amount1);
     ui->ampKnobAttack->setRealValue(patch.timbre[patch.activeTimbre].env0_attack);
     ui->ampKnobDecay->setRealValue(patch.timbre[patch.activeTimbre].env0_decay);
-    ui->ampKnobSustain->setRealValue(patch.timbre[patch.activeTimbre].env0_sustain);
+    ui->ampKnobSustain->setRealValue(100*patch.timbre[patch.activeTimbre].env0_sustain);
     ui->ampKnobRelease->setRealValue(patch.timbre[patch.activeTimbre].env0_release);
     ui->filterKnobAttack->setRealValue(patch.timbre[patch.activeTimbre].env1_attack);
     ui->filterKnobDecay->setRealValue(patch.timbre[patch.activeTimbre].env1_decay);
-    ui->filterKnobSustain->setRealValue(patch.timbre[patch.activeTimbre].env1_sustain);
+    ui->filterKnobSustain->setRealValue(100*patch.timbre[patch.activeTimbre].env1_sustain);
     ui->filterKnobRelease->setRealValue(patch.timbre[patch.activeTimbre].env1_release);
+}
+
+void MainWindow::connectKnobSystem(KnobInterface *ki) {
+    connect(ki, &KnobInterface::shape0Occurance, ui->knobShape0, &KnobWidget::knobOccurance);
+    connect(ki, &KnobInterface::shape1Occurance, ui->knobShape1, &KnobWidget::knobOccurance);
+    connect(ki, &KnobInterface::detuneOccurance, ui->knobDetune, &KnobWidget::knobOccurance);
+    connect(ki, &KnobInterface::octaveOccurance, ui->knobOctave, &KnobWidget::knobOccurance);
+    connect(ki, &KnobInterface::voiceModeOccurance, ui->knobVoice, &KnobWidget::knobOccurance);
+    connect(ki, &KnobInterface::glideOccurance, ui->knobGlide, &KnobWidget::knobOccurance);
+    connect(ki, &KnobInterface::chorusOccurance, ui->knobChorus, &KnobWidget::knobOccurance);
+    connect(ki, &KnobInterface::mix0Occurance, ui->knobMix0, &KnobWidget::knobOccurance);
+    connect(ki, &KnobInterface::mix1Occurance, ui->knobMix1, &KnobWidget::knobOccurance);
+    connect(ki, &KnobInterface::arpOccurance, ui->knobArpMode, &KnobWidget::knobOccurance);
+    connect(ki, &KnobInterface::chordOccurance, ui->knobChordMode, &KnobWidget::knobOccurance);
+    connect(ki, &KnobInterface::cutoffOccurance, ui->knobCutoff, &KnobWidget::knobOccurance);
+    connect(ki, &KnobInterface::resonanceOccurance, ui->knobResonance, &KnobWidget::knobOccurance);
+    connect(ki, &KnobInterface::volumeOccurance, ui->knobVolume, &KnobWidget::knobOccurance);
+    connect(ki, &KnobInterface::lfoFreq0Occurance, ui->knobLfoFreq0, &KnobWidget::knobOccurance);
+    connect(ki, &KnobInterface::lfoShape0Occurance, ui->knobLfoShape0, &KnobWidget::knobOccurance);
+    connect(ki, &KnobInterface::lfoFreq0Occurance, ui->knobLfoFreq1, &KnobWidget::knobOccurance);
+    connect(ki, &KnobInterface::lfoShape1Occurance, ui->knobLfoShape1, &KnobWidget::knobOccurance);
+    connect(ki, &KnobInterface::e0aOccurance, ui->ampKnobAttack, &KnobWidget::knobOccurance);
+    connect(ki, &KnobInterface::e0dOccurance, ui->ampKnobDecay, &KnobWidget::knobOccurance);
+    connect(ki, &KnobInterface::e0sOccurance, ui->ampKnobSustain, &KnobWidget::knobOccurance);
+    connect(ki, &KnobInterface::e0rOccurance, ui->ampKnobRelease, &KnobWidget::knobOccurance);
+    connect(ki, &KnobInterface::e1aOccurance, ui->filterKnobAttack, &KnobWidget::knobOccurance);
+    connect(ki, &KnobInterface::e1dOccurance, ui->filterKnobDecay, &KnobWidget::knobOccurance);
+    connect(ki, &KnobInterface::e1sOccurance, ui->filterKnobSustain, &KnobWidget::knobOccurance);
+    connect(ki, &KnobInterface::e1rOccurance, ui->filterKnobRelease, &KnobWidget::knobOccurance);
+
+
 }
 
 MainWindow::~MainWindow()

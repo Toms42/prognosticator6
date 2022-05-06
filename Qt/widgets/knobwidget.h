@@ -57,6 +57,12 @@ public slots:
     void setKnobPressed() {emit knobPressed(); _timer.start();};
     void setKnobReleased() {emit knobReleased(); if (_timer.elapsed() > 1000) {emit knobLongClicked();} else {emit knobClicked();}};
 
+    void knobOccurance(int i) {
+        if (i == 0) setValue(value()+singleStep());
+        if (i == 1) setValue(value()-singleStep());
+        if (i == 2) emit knobClicked();
+        if (i == 3) emit knobLongClicked();
+    }
 signals:
     void realValueUpdated(float value);
     void knobPressed();

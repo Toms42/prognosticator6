@@ -39,10 +39,12 @@ public:
         MOD_OSC_PITCH,
         MOD_FILTER_CUTOFF,
         MOD_FILTER_RESONANCE,
-        MOD_FILTER_AMP,
+        MOD_AMP,
         MOD_CHORUS_DEPTH,
         MOD_STEREOPAN,
         MOD_STEREOPHASE,
+        MOD_LFO0,
+        MOD_LFO1,
 
         NUM_MOD_SINKS
     };
@@ -53,6 +55,8 @@ public:
         MODSRC_LFO1,
         MODSRC_ENV0,
         MODSRC_ENV1,
+        MODSRC_MOD,
+        MODSRC_PB,
 
         NUM_MOD_SOURCES
     };
@@ -132,6 +136,8 @@ public:
 
     int activeTimbre() {return _p.activeTimbre;};
 
+    void refresh() {_onChange(); _onReload();};
+
 public slots:
     void save(uint8_t idx);
     void load(uint8_t idx);
@@ -161,23 +167,26 @@ public slots:
     void updateFilterFreq(double f) {_p.timbre[_p.activeTimbre].filter_freq = f; _onChange();};
     void updateFilterResonance(double r) {_p.timbre[_p.activeTimbre].filter_resonance = r; _onChange();};
 
-    void updateMixer0(double a) {_p.timbre[_p.activeTimbre].mixer_amount0 = a; _onChange();};
-    void updateMixer1(double a) {_p.timbre[_p.activeTimbre].mixer_amount1 = a; _onChange();};
+    void updateMixer0(double a) {_p.timbre[_p.activeTimbre].mixer_amount0 = a/100.; _onChange();};
+    void updateMixer1(double a) {_p.timbre[_p.activeTimbre].mixer_amount1 = a/100.; _onChange();};
 
     void updateEnv0Attack(double s) {_p.timbre[_p.activeTimbre].env0_attack = s; _onChange();};
     void updateEnv0Decay(double s) {_p.timbre[_p.activeTimbre].env0_decay = s; _onChange();};
-    void updateEnv0Sustain(double s) {_p.timbre[_p.activeTimbre].env0_sustain = s; _onChange();};
+    void updateEnv0Sustain(double s) {_p.timbre[_p.activeTimbre].env0_sustain = s/100.; _onChange();};
     void updateEnv0Release(double s) {_p.timbre[_p.activeTimbre].env0_release = s; _onChange();};
 
     void updateEnv1Attack(double s) {_p.timbre[_p.activeTimbre].env1_attack = s; _onChange();};
     void updateEnv1Decay(double s) {_p.timbre[_p.activeTimbre].env1_decay = s; _onChange();};
-    void updateEnv1Sustain(double s) {_p.timbre[_p.activeTimbre].env1_sustain = s; _onChange();};
+    void updateEnv1Sustain(double s) {_p.timbre[_p.activeTimbre].env1_sustain = s/100.; _onChange();};
     void updateEnv1Release(double s) {_p.timbre[_p.activeTimbre].env1_release = s; _onChange();};
 
+    // mod matrix
+    void updateModCell(Patch::ModSource source, Patch::ModSink sink, qint8 amount) {
+        _p.mod_matrix[source][sink] = amount;
+        _onChange();
+    }
+
     // special patch load/save stuff
-//    void updatePatchHover(int n) {hover_idx = n; _onChange();};
-//    void loadPatch() {load(hover_idx); _onReload(); _onChange();};
-//    void savePatch() {save(hover_idx); _onChange();};
     void patchButtonClicked();
     void patchButtonLongClicked();
     void patchButtonValueChanged(int n);
